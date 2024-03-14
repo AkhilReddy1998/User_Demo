@@ -1,218 +1,44 @@
 @import "./Assets/Styles/Variables.scss";
 
-/* =================== Segmented - Start =================== */
-:where(.css-dev-only-do-not-override-gpxksa) .custom-segment.ant-segmented {
-  width: 100%;
-  background-color: #fff;
-  border: 1px solid #1d64c8;
-  border-radius: 30px;
-  padding: 0;
-  height: 50px;
+/* =================== Form - Start =================== */
+.commonForm .ant-form-item .ant-form-item-label >label {
+  color: var(--primaryColor);
+  font-weight: 400;
 }
 
-:where(.css-dev-only-do-not-override-gpxksa) .custom-segment.ant-segmented .ant-segmented-item {
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-:where(.css-dev-only-do-not-override-gpxksa).ant-segmented .ant-segmented-group {
-  height: 50px;
-}
-
-:where(.css-dev-only-do-not-override-gpxksa).ant-segmented.ant-segmented-lg .ant-segmented-item-label {
-  line-height: 50px;
-  min-height: 50px;
-  font-size: 18px;
-}
-
-:where(.css-dev-only-do-not-override-gpxksa).custom-segment.ant-segmented .ant-segmented-item-selected {
-  color: #fff;
-}
-
-.auth-screen :where(.css-dev-only-do-not-override-gpxksa).ant-segmented .ant-segmented-group .ant-segmented-item:first-child.ant-segmented-item-selected {
-  border-radius: 30px 0 0 30px !important;
-}
-
-.auth-screen :where(.css-dev-only-do-not-override-gpxksa).ant-segmented .ant-segmented-group .ant-segmented-item:last-child.ant-segmented-item-selected {
-  border-radius: 0 30px 30px 0 !important;
-}
-
-.appSegment .ant-segmented-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.appSegment.ant-segmented {
-  background: #E6F0FF;
-  border-radius: 50px;
-}
-
-.appSegment .ant-segmented-thumb,
-.appSegment .ant-segmented-item-selected {
-  border-radius: 50px !important;
-  color: #fff !important;
-}
-
-
-.appSegment .ant-segmented-item-selected .ant-segmented-item-label {
-  color: #fff;
-  font-weight: 500;
-}
-
-/* =================== Segmented - End =================== */
-
-/* =================== Input Form - Start =================== */
-
-.auth-screen :where(.css-dev-only-do-not-override-gpxksa).ant-form-item .ant-form-item-label>label {
+.commonForm .ant-input {
+  height: 55px;
+  border: 1px solid var(--primaryColor);
+  padding: 5px 20px;
   font-size: 16px;
-  color: var(--secondaryColor);
-  margin-bottom: 10px;
+  font-weight: 400;
+  border-radius: 10px;
 }
 
-.auth-screen :where(.css-dev-only-do-not-override-gpxksa).ant-form-item .ant-form-item-label>label::after {
-  display: inline-block;
-  margin-inline-end: 4px;
-  color: #ff4d4f;
+.commonForm .ant-input-affix-wrapper {
+  border: 1px solid var(--primaryColor);
+  border-radius: 10px;
+  height: 55px;
+  padding: 5px 20px;
+
+}
+
+.commonForm .ant-input-affix-wrapper .ant-input {
+  height: auto;
   font-size: 16px;
-  font-family: SimSun, sans-serif;
-  line-height: 1;
-  content: "*";
-  visibility: inherit;
 }
 
-.auth-screen :where(.css-dev-only-do-not-override-gpxksa).ant-form-item .ant-form-item-label>label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
-  display: none;
-}
-
-.auth-screen :where(.css-dev-only-do-not-override-gpxksa).ant-input {
-  height: 50px;
-  border: 1px solid var(--colorBorder);
-}
-
-.auth-screen :where(.css-dev-only-do-not-override-gpxksa).ant-input-affix-wrapper {
-  height: 50px;
-}
-
-.auth-screen :where(.css-dev-only-do-not-override-gpxksa).ant-input-affix-wrapper>input.ant-input {
-  height: 40px;
-}
-
-/* =================== Input Form - End =================== */
-
-/* =================== Button - Start =================== */
-
-.auth-screen :where(.css-dev-only-do-not-override-gpxksa).ant-btn-primary {
-  height: 50px;
-
-}
-
-:where(.css-dev-only-do-not-override-gpxksa).ant-btn-primary {
+.commonForm .ant-checkbox-checked .ant-checkbox-inner {
   background-color: var(--primaryColor);
-  font-size: 16px;
+  border-color: var(--primaryColor);
 }
 
-:where(.css-dev-only-do-not-override-gpxksa).ant-btn-primary:not(:disabled):not(.ant-btn-disabled):hover {
-  background-color: #4283d4 !;
+.commonForm .ant-checkbox .ant-checkbox-inner {
+  width: 20px;
+  height: 20px;
 }
 
-:where(.css-dev-only-do-not-override-gpxksa).ant-btn-primary:disabled,
-:where(.css-dev-only-do-not-override-gpxksa).ant-btn-primary.ant-btn-disabled {
-  background-color: var(--colorDisable);
-  color: #fff;
-}
-
-/* =================== Button - End =================== */
-
-/* =================== Menu - Start =================== */
-
-:where(.css-dev-only-do-not-override-gpxksa).ant-menu-vertical .ant-menu-item {
-  margin-bottom: 20px;
-  align-items: center;
-  display: flex;
-  width: 99%;
-}
-
-:where(.css-dev-only-do-not-override-gpxksa).ant-menu-vertical .ant-menu-item.active {
-  border-right: 3px solid var(--primaryColor);
-  border-radius: 0;
-  margin-right: 0;
-}
-
-:where(.css-dev-only-do-not-override-gpxksa).ant-menu .ant-menu-item .ant-menu-item-icon+span {
-  margin-inline-start: 20px;
-}
-
-:where(.css-dev-only-do-not-override-gpxksa).ant-menu-vertical .ant-menu-item.active .ant-menu-item-icon+span {
-  font-weight: 600;
-}
-
-/* =================== Menu - End =================== */
-
-.searchBox :where(.css-dev-only-do-not-override-gpxksa).ant-input-affix-wrapper-lg {
-  border: 1px solid var(--colorBorder);
-}
-
-.searchBox :where(.css-dev-only-do-not-override-gpxksa).ant-input-affix-wrapper .ant-input-prefix {
-  font-size: 19px;
-  color: var(--secondaryColor);
-  margin-right: 20px;
-}
-
-.transparentInput :where(.css-dev-only-do-not-override-gpxksa).ant-input {
-  background: transparent;
-  border: 1px solid #5D6268;
-  color: #fff;
-  letter-spacing: 0.1rem;
-  height: 40px;
-  font-size: 13px;
-}
-
-.transparentInput :where(.css-dev-only-do-not-override-gpxksa).ant-btn-primary {
-  height: 40px;
-}
-
-/* =================== Custom Table - Start =================== */
-
-:where(.css-dev-only-do-not-override-gpxksa).customTable.ant-table-wrapper .ant-table-thead>tr>th {
-  background-color: #fff;
-  color: var(--textGray);
+.commonForm .ant-checkbox-wrapper {
+  font-size: 17px;
   font-weight: 300;
-  border-bottom: 0;
 }
-
-:where(.css-dev-only-do-not-override-gpxksa).customTable.ant-table-wrapper .ant-table-tbody>tr>td {
-  font-weight: 500;
-  border-bottom: 0;
-}
-
-:where(.css-dev-only-do-not-override-gpxksa).customTable.ant-table-wrapper .ant-table-tbody>tr:nth-child(odd) {
-  background-color: #F2F7FF;
-}
-
-:where(.css-dev-only-do-not-override-gpxksa).customTable.ant-table-wrapper .ant-table {
-  border-top-left-radius: 10px !important;
-  border-top-right-radius: 10px !important;
-}
-
-:where(.css-dev-only-do-not-override-gpxksa).customTable.ant-table-wrapper .ant-table-container table>thead>tr:first-child>*:first-child {
-  border-top-left-radius: 10px !important;
-
-}
-
-:where(.css-dev-only-do-not-override-gpxksa).customTable.ant-table-wrapper .ant-table-container table>thead>tr:first-child>*:last-child {
-  border-top-right-radius: 10px !important;
-
-}
-
-/* =================== Custom Table - End =================== */
-
-/* =================== Custom Drawer - Start =================== */
-
-.customDrawer .ant-drawer-body {
-  padding: 0;
-}
-
-/* =================== Custom Drawer - End =================== */

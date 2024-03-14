@@ -1,112 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+  font-family: "Jost", sans-serif;
 }
 
 body {
   font-size: 16px;
-  color: var(--secondaryColor);
+  color: var(--primaryColor);
   margin: 0 auto;
   overflow-x: hidden;
   background-color: #fff;
 }
 
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
+.primaryBtn {
   background-color: var(--primaryColor);
-}
-
-.secondaryBtn {
-  background: var(--secondaryColor);
+  border-radius: 10px;
   color: #fff;
-  height: 32px;
-}
-
-.secondaryBtn:hover {
-  color: #fff !important;
-}
-
-.Btnwhite {
-  background-color: #fff;
-  border-color: #BEC0C3;
-}
-
-.bgsetup::before {
-  content: "";
-  background: url('./Assets/Images/Svg/dashboard-bgshape.svg');
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: contain;
-}
-
-.drawerBg::before {
-  content: "";
-  background: url('./Assets/Images/drawerBg.svg');
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: contain;
-}
-
-.appbgsetup::before {
-  content: "";
-  background: #1d64c83b;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  transform: rotate(4deg);
-  border-radius: 12px;
-}
-
-.appbgsetup::after {
-  content: "";
-  background: #1d64c83b;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  transform: rotate(-5deg);
-  border-radius: 12px;
-  top: 0;
-}
-
-.dashSechedule-list li:first-child .sechcontent {
-  background-color: rgba(29, 100, 200, 0.27);
-}
-
-.dashSechedule-list li:first-child .sechcontent .sechimg {
-  border-color: var(--primaryColor);
-}
-
-.dashSechedule-list li:first-child .sechcontent .sechpara {
-  color: var(--primaryColor) !important;
-}
-
-.formDesign label {
-  font-size: 14px;
-  font-weight: 300;
-}
-
-.formDesign .ant-input,
-.formDesign .ant-picker,
-.formDesign .ant-select {
-  height: 40px;
-}
-
-.customHeight {
-  height: calc(100vh - 300px);
+  height: 55px;
+  text-align: center;
+  
 }

@@ -3,6 +3,7 @@ const APP_ROUTES = {
   SIGNUPFORM: "/signup",
   SUCCESSMSG: "/successmsg",
   FORGOTFORM: "/forgot-password",
+  OTP: "/otp",
   DASHBOARD: "/dashboard",
   APPOINTMENTS: "/appointments",
   PAYMENTS: "/payments"
