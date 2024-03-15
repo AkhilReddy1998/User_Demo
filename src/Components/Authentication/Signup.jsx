@@ -42,7 +42,7 @@ function Signup() {
             <div className="">
               <Checkbox checked>I agree to the <span className="font-semibold">Terms & Conditions</span></Checkbox>
             </div>
-            <button className="primaryBtn w-full mt-10">Login</button>
+            <button className="primaryBtn w-full mt-10">Signup</button>
           </Form>
           <div className="flex gap-2 text-secondaryText text-base mt-8">
             Already have an account?{" "}
