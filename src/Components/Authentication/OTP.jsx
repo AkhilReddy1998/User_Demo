@@ -1,13 +1,24 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import OTPImage from "../../Assets/Images/Auth/otp.png";
-import { Form } from "antd";
+import { Form, Modal } from "antd";
 import useNavigation from "../../PageRouting/HandleNavigator";
 import { LeftOutlined } from "@ant-design/icons";
+import SuccessMsg from "./SuccessMsg";
 
 function OTP() {
   const [form] = Form.useForm();
   const { navigateTo } = useNavigation();
-  const inputRefs = [useRef(null), useRef(null), useRef(null), useRef(null), useRef(null)];
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const inputRefs = [
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+  ];
 
   const handleChange = (index, e) => {
     const { value } = e.target;
@@ -58,8 +69,11 @@ function OTP() {
                 />
               ))}
             </div>
-            <button className="primaryBtn w-full mt-5">Verify</button>
+            <button onClick={showModal} className="primaryBtn w-full mt-5">Verify</button>
           </Form>
+          <Modal width="30%" centered header={false} footer={false} open={isModalOpen} closeIcon={false}>
+            <SuccessMsg />
+          </Modal>
         </div>
       </div>
     </div>
