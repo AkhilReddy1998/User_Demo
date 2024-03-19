@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Breadcrumb,
   Checkbox,
@@ -14,8 +14,11 @@ import {
   RightOutlined,
   AppstoreOutlined,
   BarsOutlined,
+  HeartOutlined,
+  HeartTwoTone,
+  HeartFilled,
 } from "@ant-design/icons";
-import ProductImage1 from "../../../Assets/Images/Products/1.png"
+import ProductImage1 from "../../../Assets/Images/Products/1.png";
 
 const categories = [
   "Men",
@@ -66,7 +69,11 @@ const rating = ["4★ & above", "3★ & above", "2★ & above", "1★ & above"];
 const Rating = (
   <div className="flex flex-col">
     {rating.map((rate) => (
-      <Checkbox className="commonCheckbox" key={rate} checked={rate === "4★ & above"}>
+      <Checkbox
+        className="commonCheckbox"
+        key={rate}
+        checked={rate === "4★ & above"}
+      >
         {rate}
       </Checkbox>
     ))}
@@ -234,6 +241,11 @@ function Product() {
       label: "Discount",
     },
   ];
+  const [isInWishlist, setIsInWishlist] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const toggleWishlist = () => {
+    setIsInWishlist(!isInWishlist);
+  };
   return (
     <Layouts>
       <div>
@@ -299,19 +311,53 @@ function Product() {
             </div>
           </div>
           <div className="grid grid-cols-3 gap-5 mt-5">
-            <div className="bg-White rounded-md border-[0.5px] border-borderColor">
-              <div className="flex justify-center border-b-borderColor border-b p-3">
-                <img src={ProductImage1} alt="images" className="w-[180px]"/>
+            <div
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              className="bg-White rounded-md border-[0.5px] border-borderColor cursor-pointer"
+            >
+              <div className="relative flex justify-center border-b-borderColor border-b p-3">
+                <img src={ProductImage1} alt="images" className="w-[180px]" />
+                <div className="absolute right-5 cursor-pointer">
+                  {isInWishlist ? (
+                    <HeartFilled
+                      onClick={toggleWishlist}
+                      className="text-secondaryColor"
+                      style={{ fontSize: "24px", cursor: "pointer" }}
+                    />
+                  ) : (
+                    <HeartOutlined
+                      onClick={toggleWishlist}
+                      className="text-secondaryText"
+                      style={{ fontSize: "24px", cursor: "pointer" }}
+                    />
+                  )}
+                </div>
               </div>
               <div className="p-5">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <div className="flex gap-3 items-center">
-                      <h6 className="font-medium text-base mb-0">$99.50</h6>
-                      <p className="text-secondaryText text-sm line-through mb-0">$1128.00</p>
-                    </div>
-                    <Rate className="commonRate" allowHalf defaultValue={4.5} />
+                <div className={isHovered ? "hidden" : "block"}>
+                  <div className="font-medium">
+                    Apple iPhone 15 (Blue, 128 GB)
                   </div>
+                  <div className="flex gap-2 items-center mt-2">
+                    <Rate className="commonRate" allowHalf defaultValue={4.5} />
+                    <span className="text-xs text-secondaryText font-medium">
+                      25,288
+                    </span>
+                  </div>
+                </div>
+                {isHovered && (
+                  <button className="bg-primaryText h-10 w-full text-White rounded-md mb-">
+                    Add to Card
+                  </button>
+                )}
+                <div className="flex gap-3 items-center mt-2">
+                  <h6 className="font-medium text-lg mb-0">$99.50</h6>
+                  <p className="text-secondaryText text-xs  mb-0">
+                    <span className="line-through text-base">$118.00</span>{" "}
+                    (Save $18.50)
+                  </p>
+                  <p className="mb-0 text-sm font-medium text-Green">10% Off</p>
                 </div>
               </div>
             </div>

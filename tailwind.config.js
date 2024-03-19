@@ -11,6 +11,7 @@ module.exports = {
           borderColor: "#E0E0E0",
           bgColor: "#F7FAFC",
           White: "#fff",
+          Green: "#00B517"
       },
       letterSpacing: {
         wide: "0.16px",
