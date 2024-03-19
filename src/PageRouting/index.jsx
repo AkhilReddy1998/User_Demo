@@ -10,6 +10,7 @@ import ForgotPassword from "../Components/Authentication/ForgotPassword";
 import Signup from "../Components/Authentication/Signup";
 import Login from "../Components/Authentication/Login";
 import OTP from "../Components/Authentication/OTP";
+import Product from "../Components/Pages/Products";
 
 const PageRouting = () => {
   return (
@@ -21,6 +22,7 @@ const PageRouting = () => {
         <Route path={APP_ROUTES.FORGOTFORM} component={ForgotPassword} />
         <Route path={APP_ROUTES.OTP} component={OTP} />
         <Route path={APP_ROUTES.DASHBOARD} component={Dashboard} />
+        <Route path={APP_ROUTES.PRODUCTS} component={Product} />
       </Switch>
     </Router>
   );

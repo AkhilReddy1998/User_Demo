@@ -6,7 +6,11 @@ const Layouts = ({ children }) => {
   return (
     <div >
       <Header />
-      <div className="pt-5">{children}</div>
+      <div className="pt-5 bg-bgColor min-h-screen">
+        <div className="w-[95%] mx-auto">
+        {children}
+        </div>
+      </div>
     </div>
   );
 };

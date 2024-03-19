@@ -1,14 +1,14 @@
 @import "./Assets/Styles/Variables.scss";
 
 /* =================== Form - Start =================== */
-.commonForm .ant-form-item .ant-form-item-label >label {
-  color: var(--primaryColor);
+.commonForm .ant-form-item .ant-form-item-label > label {
+  color: var(--primaryText);
   font-weight: 400;
 }
 
 .commonForm .ant-input {
   height: 55px;
-  border: 1px solid var(--primaryColor);
+  border: 1px solid var(--primaryText);
   padding: 5px 20px;
   font-size: 16px;
   font-weight: 400;
@@ -16,11 +16,10 @@
 }
 
 .commonForm .ant-input-affix-wrapper {
-  border: 1px solid var(--primaryColor);
+  border: 1px solid var(--primaryText);
   border-radius: 10px;
   height: 55px;
   padding: 5px 20px;
-
 }
 
 .commonForm .ant-input-affix-wrapper .ant-input {
@@ -41,4 +40,160 @@
 .commonForm .ant-checkbox-wrapper {
   font-size: 17px;
   font-weight: 300;
+}
+
+/* =================== Form - End =================== */
+/* =================== Search - Start =================== */
+.commonSearch.ant-input-group {
+  border: 1px solid var(--primaryColor);
+  border-radius: 50px;
+  height: 40px;
+  align-items: center;
+  display: flex;
+  border-right: 0;
+  background-color: #fff;
+}
+
+.commonSearch .ant-input {
+  border: 0;
+  height: 38px;
+  border-radius: 50px !important;
+}
+
+.commonSearch .ant-select {
+  height: 38px;
+  border: 0;
+}
+
+.commonSearch
+  .ant-select:not(.ant-select-customize-input)
+  .ant-select-selector {
+  border: 0;
+  background-color: #fff;
+}
+
+.commonSearch button {
+  border-radius: 0;
+}
+
+.commonSearch.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  border: 0;
+  background-color: transparent;
+  color: #fff;
+}
+
+.commonSearch.ant-select .ant-select-arrow {
+  color: #fff;
+}
+
+/* =================== Search - End =================== */
+
+/* =================== Collapse - Start =================== */
+
+.commonCollapse.ant-collapse {
+  background-color: #fff;
+  border: 0;
+}
+.commonCollapse.ant-collapse > .ant-collapse-item {
+  border: 0;
+}
+
+.commonCollapse.ant-collapse .ant-collapse-content {
+  border: 0;
+}
+
+.commonCollapse.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.commonCollapse.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+  padding: 12px 0;
+}
+
+.commonCollapse.ant-collapse .ant-collapse-content > .ant-collapse-content-box {
+  padding: 12px 0;
+  padding-top: 0;
+}
+
+/* =================== Collapse - End =================== */
+
+/* =================== Badge - Start =================== */
+.commonBadge.ant-badge .ant-badge-count {
+  color: #131118;
+  box-shadow: none;
+}
+/* =================== Badge - End =================== */
+
+/* =================== Checkbox - Start =================== */
+
+.commonCheckbox.ant-checkbox-wrapper {
+  color: #8d8d8d;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.commonCheckbox .ant-checkbox + span {
+  padding-inline-start: 12px;
+}
+
+.commonCheckbox1.ant-checkbox-wrapper {
+  font-size: 13px;
+}
+
+/* =================== Checkbox - End =================== */
+
+/* =================== Slider - Start =================== */
+
+.commonRange.ant-slider .ant-slider-track {
+  background-color: var(--primaryColor);
+}
+
+.commonRange.ant-slider .ant-slider-rail {
+  background-color: #d8d8d8;
+  border-radius: 50px;
+}
+
+.commonRange.ant-slider-horizontal .ant-slider-rail {
+  height: 7px;
+}
+
+.commonRange.ant-slider-horizontal .ant-slider-track {
+  height: 7px;
+}
+
+.commonRange.ant-slider-horizontal .ant-slider-step {
+  height: 7px;
+}
+
+.commonRange.ant-slider-horizontal .ant-slider-handle {
+  inset-block-start: 2px;
+}
+/* =================== Slider - End =================== */
+
+/* =================== Select - Start =================== */
+.commonSelect1.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  border: 0;
+  font-size: 13px;
+}
+
+.commonSelect1.ant-select .ant-select-arrow {
+  color: var(--primaryText);
+}
+/* =================== Select - End =================== */
+/* =================== Segment - Start =================== */
+.commonSegment.ant-segmented .ant-segmented-item-selected  {
+  background-color: #fff;
+}
+/* =================== Segment - End =================== */
+
+.commonRate.ant-rate {
+  color: var(--secondaryColor);
+  font-size: 13px;
+}
+
+.commonRate.ant-rate .ant-rate-star:not(:last-child) {
+  margin-inline-end: 2px;
 }

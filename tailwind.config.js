@@ -4,9 +4,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-          primaryColor: "#131118",
-          secondaryColor: "#0E0D0E",
-          secondaryText: "#A4A1AA"
+          primaryColor: "#0171DC",
+          secondaryColor: "#FFC11F",
+          primaryText: "#131118",
+          secondaryText: "#A4A1AA",
+          borderColor: "#E0E0E0",
+          bgColor: "#F7FAFC",
+          White: "#fff",
       },
       letterSpacing: {
         wide: "0.16px",
