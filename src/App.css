@@ -20,10 +20,9 @@ body {
 }
 
 .primaryBtn {
-  background-color: var(--primaryText);
-  border-radius: 10px;
+  background-color: var(--primaryColor);
+  border-radius: 5px;
   color: #fff;
-  height: 55px;
+  height: 45px;
   text-align: center;
-  
 }

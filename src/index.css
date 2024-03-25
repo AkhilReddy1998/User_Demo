@@ -7,19 +7,29 @@
 }
 
 .commonForm .ant-input {
-  height: 55px;
-  border: 1px solid var(--primaryText);
+  height: 45px;
+  border: 1px solid var(--border);
   padding: 5px 20px;
   font-size: 16px;
   font-weight: 400;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .commonForm .ant-input-affix-wrapper {
-  border: 1px solid var(--primaryText);
-  border-radius: 10px;
-  height: 55px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  height: 45px;
   padding: 5px 20px;
+}
+
+.commonForm .ant-picker {
+  height: 45px;
+  border: 1px solid var(--border);
+  padding: 5px 20px;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 5px;
+  width: 100%;
 }
 
 .commonForm .ant-input-affix-wrapper .ant-input {
@@ -29,7 +39,7 @@
 
 .commonForm .ant-checkbox-checked .ant-checkbox-inner {
   background-color: var(--primaryColor);
-  border-color: var(--primaryColor);
+  border-color: var(--border);
 }
 
 .commonForm .ant-checkbox .ant-checkbox-inner {
@@ -38,16 +48,34 @@
 }
 
 .commonForm .ant-checkbox-wrapper {
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 300;
+}
+
+.commonForm .ant-checkbox-wrapper:not(.ant-checkbox-wrapper-disabled):hover .ant-checkbox-checked:not(.ant-checkbox-disabled) .ant-checkbox-inner {
+  background-color: var(--primaryColor);
+}
+
+.commonForm .ant-row {
+  align-items: center;
+  gap: 20px;
+}
+
+.commonForm .ant-form-item .ant-form-item-label >label::after {
+  content: " ";
+}
+
+.commonForm .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
+  background-color: var(--primaryColor);
+  border-color: var(--primaryColor);
 }
 
 /* =================== Form - End =================== */
 /* =================== Search - Start =================== */
 .commonSearch.ant-input-group {
-  border: 1px solid var(--primaryColor);
+  border: 1px solid var(--secondaryColor);
   border-radius: 50px;
-  height: 40px;
+  height: 50px;
   align-items: center;
   display: flex;
   border-right: 0;
@@ -56,7 +84,7 @@
 
 .commonSearch .ant-input {
   border: 0;
-  height: 38px;
+  height: 48px;
   border-radius: 50px !important;
 }
 
@@ -69,7 +97,8 @@
   .ant-select:not(.ant-select-customize-input)
   .ant-select-selector {
   border: 0;
-  background-color: #fff;
+  background-color: transparent;
+  border-radius: 50px;
 }
 
 .commonSearch button {
@@ -79,11 +108,15 @@
 .commonSearch.ant-select:not(.ant-select-customize-input) .ant-select-selector {
   border: 0;
   background-color: transparent;
-  color: #fff;
+  color: var(--primaryText);
+}
+
+.commonSearch.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+  padding: 0 16px;
 }
 
 .commonSearch.ant-select .ant-select-arrow {
-  color: #fff;
+  color: var(--primaryText);
 }
 
 /* =================== Search - End =================== */
@@ -121,8 +154,16 @@
 
 /* =================== Badge - Start =================== */
 .commonBadge.ant-badge .ant-badge-count {
-  color: #131118;
+  color: #fff;
   box-shadow: none;
+}
+
+.commonBadge.ant-badge .ant-badge-count {
+  inset-inline-start: 0;
+  inset-inline-end: inherit;
+  transform: none;
+  top: 25%;
+  left: -10px;
 }
 /* =================== Badge - End =================== */
 
@@ -189,6 +230,8 @@
 }
 /* =================== Segment - End =================== */
 
+/* =================== Start Rate - Start =================== */
+
 .commonRate.ant-rate {
   color: var(--secondaryColor);
   font-size: 13px;
@@ -196,4 +239,20 @@
 
 .commonRate.ant-rate .ant-rate-star:not(:last-child) {
   margin-inline-end: 2px;
+}
+
+/* =================== Start Rate - End =================== */
+
+/* =================== Breadcrumb - Start =================== */
+
+.commonBreadcrumb.ant-breadcrumb {
+ color: #000;
+}
+.commonBreadcrumb.ant-breadcrumb .ant-breadcrumb-separator {
+  color: #000;
+}
+/* =================== Breadcrumb - End =================== */
+
+.ant-input:focus, .ant-input-focused, .ant-select:focus {
+  box-shadow: none;
 }

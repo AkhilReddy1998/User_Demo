@@ -11,12 +11,14 @@ import Signup from "../Components/Authentication/Signup";
 import Login from "../Components/Authentication/Login";
 import OTP from "../Components/Authentication/OTP";
 import Product from "../Components/Pages/Products";
+import Home from "../Components/Pages/Home";
 
 const PageRouting = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path={APP_ROUTES.LOGINFORM} component={Login} />
+      <Route exact path={APP_ROUTES.HOME} component={Home} />
+        <Route path={APP_ROUTES.LOGINFORM} component={Login} />
         <Route path={APP_ROUTES.SIGNUPFORM} component={Signup} />
         <Route path={APP_ROUTES.SUCCESSMSG} component={SuccessMsg} />
         <Route path={APP_ROUTES.FORGOTFORM} component={ForgotPassword} />

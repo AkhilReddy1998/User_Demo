@@ -1,5 +1,6 @@
 const APP_ROUTES = {
-  LOGINFORM: "/",
+  HOME: "/",
+  LOGINFORM: "/login",
   SIGNUPFORM: "/signup",
   SUCCESSMSG: "/successmsg",
   FORGOTFORM: "/forgot-password",

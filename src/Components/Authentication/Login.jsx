@@ -1,53 +1,60 @@
 import React from "react";
-import LoginImage from "../../Assets/Images/Auth/Login.png";
-import { Checkbox, Form, Input } from "antd";
+import { Breadcrumb, Checkbox, Form, Input } from "antd";
 import useNavigation from "../../PageRouting/HandleNavigator";
+import Layouts from "../Layouts";
 
 function Login() {
   const [form] = Form.useForm();
-  const {navigateTo} = useNavigation()
+  const { navigateTo } = useNavigation()
   return (
-    <div className="flex min-h-screen">
-      <div className="w-[60%] h-screen">
-        <img
-          src={LoginImage}
-          alt="images"
-          className="w-full h-full object-cover object-top"
+    <Layouts>
+      <div className="bg-White p-2 border border-borderColor rounded-md">
+        <Breadcrumb
+          separator="|"
+          className="commonBreadcrumb"
+          items={[
+            {
+              title: <div onClick={() => navigateTo("/")} className=" cursor-pointer hover:text-primaryColor">Home</div>,
+            },
+            {
+              title: 'Log In To Your Account',
+            },
+          ]}
         />
       </div>
-      <div className="w-[40%] min-h-screen p-14">
-        <div className="flex flex-col justify-center h-full">
-          <div className="mb-3">
-            <h3 className="text-3xl font-semibold mb-2">Welcome 👋</h3>
-            <p className="text-secondaryText text-base">Please login here</p>
-          </div>
+      <div className="my-7">
+        <h3 className="uppercase text-xl font-semibold border-b border-b-borderDark pb-3 mb-7">LOG IN TO YOUR ACCOUNT</h3>
+        <div className="w-[60%] mx-auto bg-White p-5 border border-borderColor rounded-md">
           <Form
-            className="commonForm"
+            className="commonForm w-[80%] mx-auto"
             form={form}
-            layout="vertical"
             autoComplete="off"
+            name="basic"
+            labelCol={{
+              span: 4,
+            }}
+            wrapperCol={{
+              span: 20,
+            }}
+            initialValues={{
+              remember: true,
+            }}
           >
-            <Form.Item className="mb-3" name="email" label="Email Address">
+            <Form.Item className="mb-3" name="email" label="Email">
               <Input />
             </Form.Item>
             <Form.Item className="mb-3" name="password" label="Password">
               <Input.Password />
             </Form.Item>
-            <div className="flex justify-between items-center">
-              <Checkbox checked>Remember Me</Checkbox>
-              <div onClick={() => navigateTo("/forgot-password")} className="cursor-pointer font-light">Forgot Password?</div>
+            <div onClick={() => navigateTo("/forgot-password")} className="cursor-pointer mt-5 text-center hover:text-primaryColor">Forgot your Password?</div>
+            <div className="flex justify-center ">
+              <button className="primaryBtn text-sm font-medium w-[100px] mt-5">Sign In</button>
             </div>
-            <button className="primaryBtn w-full mt-10">Login</button>
           </Form>
-          <div className="flex gap-2 text-secondaryText text-base mt-8">
-            Don't have an account?{" "}
-            <div onClick={() => navigateTo("/signup")} className="text-primaryColor font-semibold hover:underline cursor-pointer">
-              SignUp
-            </div>
-          </div>
+          <div onClick={() => navigateTo("/signup")} className="border-t border-t-borderColor pt-4 mt-5 hover:text-primaryColor cursor-pointer text-center">No account? Create one here</div>
         </div>
       </div>
-    </div>
+    </Layouts>
   );
 }
 

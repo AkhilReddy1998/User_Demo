@@ -1,48 +1,59 @@
 import React from "react";
 import ForgotImage from "../../Assets/Images/Auth/forgot.png";
-import { Form, Input } from "antd";
+import { Breadcrumb, Form, Input } from "antd";
 import useNavigation from "../../PageRouting/HandleNavigator";
 import { LeftOutlined } from "@ant-design/icons";
+import Layouts from "../Layouts";
 
 function ForgotPassword() {
   const [form] = Form.useForm();
   const { navigateTo } = useNavigation();
   return (
-    <div className="flex min-h-screen">
-      <div className="w-[60%] h-screen">
-        <img
-          src={ForgotImage}
-          alt="images"
-          className="w-full h-full object-cover object-center"
+    <Layouts>
+      <div className="bg-White p-2 border border-borderColor rounded-md">
+        <Breadcrumb
+          separator="|"
+          className="commonBreadcrumb"
+          items={[
+            {
+              title: <div onClick={() => navigateTo("/")} className=" cursor-pointer hover:text-primaryColor">Home</div>,
+            },
+            {
+              title: 'Reset Your Password',
+            },
+          ]}
         />
       </div>
-      <div className="w-[40%] min-h-screen p-14">
-        <div className="flex flex-col justify-center h-full">
-          <div onClick={() => navigateTo("/")} className="flex gap-2 mb-8 cursor-pointer">
-            <LeftOutlined className="text-sm"/>
-            <div className="font-regular text-sm">Back</div>
-          </div>
-          <div className="mb-3">
-            <h3 className="text-3xl font-semibold mb-2">Forgot Password</h3>
-            <p className="text-secondaryText text-base">
-              Enter your registered email address. we’ll send you a code to
-              reset your password.
-            </p>
-          </div>
+      <div className="my-7">
+        <h3 className="uppercase text-xl font-semibold border-b border-b-borderDark pb-3 mb-7">FORGOT YOUR PASSWORD?</h3>
+        <div className="bg-White p-5 border border-borderColor rounded-md">
           <Form
-            className="commonForm"
+            className="commonForm w-[60%] mx-auto"
             form={form}
-            layout="vertical"
             autoComplete="off"
+            name="basic"
+            labelCol={{
+              span: 4,
+            }}
+            wrapperCol={{
+              span: 20,
+            }}
+            initialValues={{
+              remember: true,
+            }}
           >
-            <Form.Item className="mb-3" name="email" label="Email Address">
+            <p className="text-secondaryText text-center mb-5">Please enter the email address you used to register. You will receive a temporary link to reset your password.</p>
+            <Form.Item className="my-10" name="email" label="Email Address">
+              <div className="flex items-center gap-3">
               <Input />
+              <button className="primaryBtn hover:bg-primaryText text-sm font-medium w-[200px] ">Send Reset Link</button>
+              </div>
             </Form.Item>
-            <button onClick={() => navigateTo("/otp")} className="primaryBtn w-full mt-5">Sent OTP</button>
           </Form>
+
         </div>
       </div>
-    </div>
+    </Layouts>
   );
 }
 
