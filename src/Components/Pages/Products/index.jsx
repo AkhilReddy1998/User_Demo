@@ -15,7 +15,6 @@ import {
   AppstoreOutlined,
   BarsOutlined,
   HeartOutlined,
-  HeartTwoTone,
   HeartFilled,
 } from "@ant-design/icons";
 import ProductImage1 from "../../../Assets/Images/Products/1.png";

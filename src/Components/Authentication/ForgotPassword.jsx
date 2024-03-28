@@ -1,8 +1,6 @@
 import React from "react";
-import ForgotImage from "../../Assets/Images/Auth/forgot.png";
 import { Breadcrumb, Form, Input } from "antd";
 import useNavigation from "../../PageRouting/HandleNavigator";
-import { LeftOutlined } from "@ant-design/icons";
 import Layouts from "../Layouts";
 
 function ForgotPassword() {
