@@ -1,4 +1,5 @@
 @import "./Assets/Styles/Variables.scss";
+@import "react-multi-carousel/lib/styles.css";
 
 /* =================== Form - Start =================== */
 .commonForm .ant-form-item .ant-form-item-label > label {

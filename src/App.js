@@ -8,11 +8,11 @@ function App() {
     <ConfigProvider
       theme={{
         token: {
-          colorPrimary: "#1D64C8",
+          colorPrimary: "#C3141A",
         },
         components: {
           Segmented: {
-            itemSelectedBg: "#1D64C8",
+            itemSelectedBg: "#C3141A",
           },
         },
       }}

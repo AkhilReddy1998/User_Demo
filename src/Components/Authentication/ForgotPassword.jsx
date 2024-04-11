@@ -1,13 +1,15 @@
 import React from "react";
 import { Breadcrumb, Form, Input } from "antd";
 import useNavigation from "../../PageRouting/HandleNavigator";
-import Layouts from "../Layouts";
+import Header from "../Shared/Header";
 
 function ForgotPassword() {
   const [form] = Form.useForm();
   const { navigateTo } = useNavigation();
   return (
-    <Layouts>
+    <div>
+      <Header />
+      <div>
       <div className="bg-White p-2 border border-borderColor rounded-md">
         <Breadcrumb
           separator="|"
@@ -51,7 +53,8 @@ function ForgotPassword() {
 
         </div>
       </div>
-    </Layouts>
+      </div>
+    </div>
   );
 }
 

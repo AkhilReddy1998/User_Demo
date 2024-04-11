@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Breadcrumb, Checkbox, DatePicker, Form, Input, Radio } from "antd";
 import useNavigation from "../../PageRouting/HandleNavigator";
-import Layouts from "../Layouts";
+import Header from "../Shared/Header";
 
 function Signup() {
   const [value, setValue] = useState(1);
@@ -12,7 +12,9 @@ function Signup() {
     setValue(e.target.value);
   };
   return (
-    <Layouts>
+    <div>
+      <Header />
+      <div>
       <div className="bg-White p-2 border border-borderColor rounded-md">
         <Breadcrumb
           separator="|"
@@ -116,7 +118,8 @@ function Signup() {
           </Form>
         </div>
       </div>
-    </Layouts>
+      </div>
+    </div>
   );
 }
 

@@ -1,14 +1,15 @@
 import React from "react";
-import Layouts from "../../Layouts";
 import Banner from "./Banner";
+import Header from "../../Shared/Header";
 
 function Dashboard() {
   return (
-    <Layouts>
+    <div>
+      <Header />
         <section className="bg-White p-4">
           <Banner />
         </section>
-    </Layouts>
+    </div>
   );
 }
 

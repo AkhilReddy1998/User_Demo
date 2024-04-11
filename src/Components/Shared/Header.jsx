@@ -88,8 +88,16 @@ function Header() {
   ];
   const items = [
     {
-      label: <a href="/login">Sign In</a>,
+      label: <a href="/login">Gayu D</a>,
       key: '0',
+    },
+    {
+      label: <a href="/login">Sign In</a>,
+      key: '1',
+    },
+    {
+      label: <a href="/login">Sign Out</a>,
+      key: '2',
     },
   ];
   return (
@@ -139,52 +147,54 @@ function Header() {
           </div>
         </div>
       </div>
-      <div className="w-[95%] mx-auto">
-        <div className="flex justify-between items-center  h-[70px]">
-          <div className="logo flex items-center">
-            <img src={Logo} alt="images" className="w-[60px]" />
-            <div className="font-semibold text-lg">AV Sore</div>
-          </div>
-          <div className="w-[60%]">
-            <Input.Group compact className="commonSearch">
-              <Select defaultValue="a" className="w-[25%]">
-                <Option value="a">All Category</Option>
-                <Option value="b">.jp</Option>
-                <Option value="c">.cn</Option>
-                <Option value="d">.org</Option>
-              </Select>
-              <Input
-                className="w-[60%]"
-                placeholder="Search everything at AV Store"
-              />
-              <div className="w-[20%] h-[48px] bg-White !rounded-r-full flex justify-end">
-                <button className="bg-secondaryColor text-sm font-semibold uppercase w-10 h-[48px] w-full !rounded-r-full">
-                  Search
-                </button>
-              </div>
-            </Input.Group>
-          </div>
-          <div className="flex gap-8 items-center">
-            <Dropdown
-              menu={{
-                items,
-              }}
-              trigger={['click']}
-            >
-              <div className="flex items-center cursor-pointer group/icon gap-3">
-                <div className="border group-hover/icon:text-primaryColor rounded-full text-lg w-10 h-10 flex justify-center items-center">
-                  <UserOutlined />
+      <div className="bg-White ">
+        <div className="w-[95%] mx-auto">
+          <div className="flex justify-between items-center  h-[70px]">
+            <div className="logo flex items-center">
+              <img src={Logo} alt="images" className="w-[60px]" />
+              <div className="font-semibold text-lg">AV Sore</div>
+            </div>
+            <div className="w-[60%]">
+              <Input.Group compact className="commonSearch">
+                <Select defaultValue="a" className="w-[25%]">
+                  <Option value="a">All Category</Option>
+                  <Option value="b">.jp</Option>
+                  <Option value="c">.cn</Option>
+                  <Option value="d">.org</Option>
+                </Select>
+                <Input
+                  className="w-[60%]"
+                  placeholder="Search everything at AV Store"
+                />
+                <div className="w-[20%] h-[48px] bg-White !rounded-r-full flex justify-end">
+                  <button className="bg-secondaryColor text-sm font-semibold uppercase w-10 h-[48px] w-full !rounded-r-full">
+                    Search
+                  </button>
                 </div>
-                <span className="font-medium text-sm">My Account</span>
-              </div>
-            </Dropdown>
-            <div className="flex items-center gap-3 cursor-pointer group/icon">
-              <Badge className="commonBadge" count={5} color="#F2273D">
-                <div className="border group-hover/icon:text-primaryColor rounded-full text-lg w-10 h-10 flex justify-center items-center">
-                  <ShoppingCartOutlined />
+              </Input.Group>
+            </div>
+            <div className="flex gap-8 items-center">
+              <Dropdown
+                menu={{
+                  items,
+                }}
+                trigger={['click']}
+              >
+                <div className="flex items-center cursor-pointer group/icon gap-3">
+                  <div className="border group-hover/icon:text-primaryColor rounded-full text-lg w-10 h-10 flex justify-center items-center">
+                    <UserOutlined />
+                  </div>
+                  <span className="font-medium text-sm">My Account</span>
                 </div>
-              </Badge>
-              <span className="font-medium text-sm">$0.00</span>
+              </Dropdown>
+              <div className="flex items-center gap-3 cursor-pointer group/icon">
+                <Badge className="commonBadge" count={5} color="#F2273D">
+                  <div className="border group-hover/icon:text-primaryColor rounded-full text-lg w-10 h-10 flex justify-center items-center">
+                    <ShoppingCartOutlined />
+                  </div>
+                </Badge>
+                <span className="font-medium text-sm">$0.00</span>
+              </div>
             </div>
           </div>
         </div>

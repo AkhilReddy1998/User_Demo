@@ -6,9 +6,7 @@ const APP_ROUTES = {
   FORGOTFORM: "/forgot-password",
   OTP: "/otp",
   DASHBOARD: "/dashboard",
-  APPOINTMENTS: "/appointments",
-  PAYMENTS: "/payments",
-  PRODUCTS: "/products"
+  PRODUCTS: "/products",
 };
 
 export { APP_ROUTES };

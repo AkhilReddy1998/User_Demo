@@ -8,7 +8,6 @@ import {
   Segmented,
   Rate,
 } from "antd";
-import Layouts from "../../Layouts";
 import {
   CaretDownFilled,
   RightOutlined,
@@ -18,6 +17,7 @@ import {
   HeartFilled,
 } from "@ant-design/icons";
 import ProductImage1 from "../../../Assets/Images/Products/1.png";
+import Header from "../../Shared/Header";
 
 const categories = [
   "Men",
@@ -246,124 +246,128 @@ function Product() {
     setIsInWishlist(!isInWishlist);
   };
   return (
-    <Layouts>
-      <div>
-        <Breadcrumb
-          separator={<RightOutlined />}
-          items={[
-            {
-              title: "Home",
-            },
-            {
-              title: "Smart Phones",
-            },
-          ]}
-        />
-      </div>
-      <div className="flex gap-5 mt-5">
-        <div className="w-[20%]">
-          <div className="bg-White p-3 rounded-md">
-            <div className="flex justify-between items-center border-b border-b-borderColor pb-3">
-              <div className="uppercase font-semibold">Filter</div>
-              <div className="text-primaryColor text-xs cursor-pointer hover:underline font-medium">
-                Clear All
-              </div>
-            </div>
-            <Collapse
-              className="commonCollapse"
-              expandIconPosition="end"
-              items={items}
-              defaultActiveKey={["1", "2", "3", "4", "5"]}
-            />
-          </div>
+    <div>
+      <Header />
+      <main className="w-[95%] mx-auto">
+        <div className="bg-White mt-5 py-2 px-4">
+          <Breadcrumb
+          className="commonBreadcrumb"
+            separator={<RightOutlined />}
+            items={[
+              {
+                title: "Home",
+              },
+              {
+                title: "Smart Phones",
+              },
+            ]}
+          />
         </div>
-        <div className="w-[80%]">
-          <div className="bg-White p-3 rounded-md">
-            <div className="flex justify-between items-center">
-              <div className="text-sm text-">
-                12,911 items in <span className="font-semibold">Mobiles</span>
+        <div className="flex gap-5 mt-5">
+          <div className="w-[20%]">
+            <div className="bg-White p-3 rounded-md">
+              <div className="flex justify-between items-center border-b border-b-borderColor pb-3">
+                <div className="uppercase font-semibold">Filter</div>
+                <div className="text-primaryColor text-xs cursor-pointer hover:underline font-medium">
+                  Clear All
+                </div>
               </div>
-              <div className="flex gap-3 items-center">
-                <Checkbox className="text-sm commonCheckbox1">
-                  Verified Only
-                </Checkbox>
-                <Select
-                  className="commonSelect1"
-                  defaultValue="a"
-                  options={FilterItems}
-                  suffixIcon={<CaretDownFilled />}
-                />
-                <Segmented
-                  className="commonSegment"
-                  options={[
-                    {
-                      value: "List",
-                      icon: <BarsOutlined />,
-                    },
-                    {
-                      value: "Kanban",
-                      icon: <AppstoreOutlined />,
-                    },
-                  ]}
-                />
-              </div>
+              <Collapse
+                className="commonCollapse"
+                expandIconPosition="end"
+                items={items}
+                defaultActiveKey={["1", "2", "3", "4", "5"]}
+              />
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-5 mt-5">
-            <div
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              className="bg-White rounded-md border-[0.5px] border-borderColor cursor-pointer"
-            >
-              <div className="relative flex justify-center border-b-borderColor border-b p-3">
-                <img src={ProductImage1} alt="images" className="w-[180px]" />
-                <div className="absolute right-5 cursor-pointer">
-                  {isInWishlist ? (
-                    <HeartFilled
-                      onClick={toggleWishlist}
-                      className="text-secondaryColor"
-                      style={{ fontSize: "24px", cursor: "pointer" }}
-                    />
-                  ) : (
-                    <HeartOutlined
-                      onClick={toggleWishlist}
-                      className="text-secondaryText"
-                      style={{ fontSize: "24px", cursor: "pointer" }}
-                    />
+          <div className="w-[80%]">
+            <div className="bg-White p-3 rounded-md">
+              <div className="flex justify-between items-center">
+                <div className="text-sm text-">
+                  12,911 items in <span className="font-semibold">Mobiles</span>
+                </div>
+                <div className="flex gap-3 items-center">
+                  <Checkbox className="text-sm commonCheckbox1">
+                    Verified Only
+                  </Checkbox>
+                  <Select
+                    className="commonSelect1"
+                    defaultValue="a"
+                    options={FilterItems}
+                    suffixIcon={<CaretDownFilled />}
+                  />
+                  <Segmented
+                    className="commonSegment"
+                    options={[
+                      {
+                        value: "List",
+                        icon: <BarsOutlined />,
+                      },
+                      {
+                        value: "Kanban",
+                        icon: <AppstoreOutlined />,
+                      },
+                    ]}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-5 mt-5">
+              <div
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                className="bg-White rounded-md border-[0.5px] border-borderColor cursor-pointer"
+              >
+                <div className="relative flex justify-center border-b-borderColor border-b p-3">
+                  <img src={ProductImage1} alt="images" className="w-[180px]" />
+                  <div className="absolute right-5 cursor-pointer">
+                    {isInWishlist ? (
+                      <HeartFilled
+                        onClick={toggleWishlist}
+                        className="text-secondaryColor"
+                        style={{ fontSize: "24px", cursor: "pointer" }}
+                      />
+                    ) : (
+                      <HeartOutlined
+                        onClick={toggleWishlist}
+                        className="text-secondaryText"
+                        style={{ fontSize: "24px", cursor: "pointer" }}
+                      />
+                    )}
+                  </div>
+                </div>
+                <div className="p-5">
+                  <div className={isHovered ? "hidden" : "block"}>
+                    <div className="font-medium">
+                      Apple iPhone 15 (Blue, 128 GB)
+                    </div>
+                    <div className="flex gap-2 items-center mt-2">
+                      <Rate className="commonRate" allowHalf defaultValue={4.5} />
+                      <span className="text-xs text-secondaryText font-medium">
+                        25,288
+                      </span>
+                    </div>
+                  </div>
+                  {isHovered && (
+                    <button className="bg-primaryText h-10 w-full text-White rounded-md mb-">
+                      Add to Card
+                    </button>
                   )}
-                </div>
-              </div>
-              <div className="p-5">
-                <div className={isHovered ? "hidden" : "block"}>
-                  <div className="font-medium">
-                    Apple iPhone 15 (Blue, 128 GB)
+                  <div className="flex gap-3 items-center mt-2">
+                    <h6 className="font-medium text-lg mb-0">$99.50</h6>
+                    <p className="text-secondaryText text-xs  mb-0">
+                      <span className="line-through text-base">$118.00</span>{" "}
+                      (Save $18.50)
+                    </p>
+                    <p className="mb-0 text-sm font-medium text-Green">10% Off</p>
                   </div>
-                  <div className="flex gap-2 items-center mt-2">
-                    <Rate className="commonRate" allowHalf defaultValue={4.5} />
-                    <span className="text-xs text-secondaryText font-medium">
-                      25,288
-                    </span>
-                  </div>
-                </div>
-                {isHovered && (
-                  <button className="bg-primaryText h-10 w-full text-White rounded-md mb-">
-                    Add to Card
-                  </button>
-                )}
-                <div className="flex gap-3 items-center mt-2">
-                  <h6 className="font-medium text-lg mb-0">$99.50</h6>
-                  <p className="text-secondaryText text-xs  mb-0">
-                    <span className="line-through text-base">$118.00</span>{" "}
-                    (Save $18.50)
-                  </p>
-                  <p className="mb-0 text-sm font-medium text-Green">10% Off</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </Layouts>
+      </main>
+    </div>
   );
 }
 
