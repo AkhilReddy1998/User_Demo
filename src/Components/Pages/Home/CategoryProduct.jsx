@@ -289,42 +289,7 @@ function CategoryProduct() {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex flex-col gap-6 mx-3">
-                            <div className="bg-White p-3 rounded-md flex items-center">
-                                <div className="w-[100px]">
-                                    <img src={ProductImage3} alt="images" className="w-full h-full" />
-                                </div>
-                                <div>
-                                    <Rate className="commonRate mb-3" allowHalf defaultValue={4.5} />
-                                    <div className="font-regular">
-                                        FUJIFILM Instax Mini 9 Instant Camera
-                                    </div>
-                                    <div className="flex gap-3 items-center mt-2">
-                                        <h6 className="font-semibold text-base mb-0">$99.50</h6>
-                                        <p className="text-secondaryText text-xs  mb-0">
-                                            <span className="line-through text-sm">$118.00</span>{" "}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="bg-White p-3 rounded-md flex items-center">
-                                <div className="w-[100px]">
-                                    <img src={ProductImage4} alt="images" className="w-full h-full" />
-                                </div>
-                                <div>
-                                    <Rate className="commonRate mb-3" allowHalf defaultValue={4.5} />
-                                    <div className="font-regular">
-                                        Apple iPhone 15 (White, 64 GB)
-                                    </div>
-                                    <div className="flex gap-3 items-center mt-2">
-                                        <h6 className="font-semibold text-base mb-0">$99.50</h6>
-                                        <p className="text-secondaryText text-xs  mb-0">
-                                            <span className="line-through text-sm">$118.00</span>{" "}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </Carousel>
                 </div>
             </div>
