@@ -5,14 +5,11 @@ import { RightOutlined } from "@ant-design/icons";
 import Security from "../../../../Assets/Images/Icons/security.svg";
 import PersonalInformation from "./PersonalInformation";
 import Address from "./Address";
+import Shipping from "./Shipping";
+import Payment from "./Payment";
 
 
 function CartCheckout() {
-    const text = `
-  A dog is a type of domesticated animal.
-  Known for its loyalty and faithfulness,
-  it can be found as a welcome guest in many households across the world.
-`;
     const items = [
         {
             key: '1',
@@ -44,8 +41,8 @@ function CartCheckout() {
                     <span>SHIPPING METHOD</span>
                 </div>
             ),
-            children: <p>{text}</p>,
-            showArrow: false
+            children: <Shipping />,
+            showArrow: false,
         },
         {
             key: '4',
@@ -55,8 +52,9 @@ function CartCheckout() {
                     <span>PAYMENT</span>
                 </div>
             ),
-            children: <p>{text}</p>,
-            showArrow: false
+            children: <Payment />,
+            showArrow: false,
+
         },
     ];
     return (

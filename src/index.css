@@ -7,6 +7,10 @@
   font-weight: 400;
 }
 
+.secondForm .ant-form-item .ant-form-item-label  {
+  text-align: left;
+}
+
 .commonForm .ant-input {
   height: 45px;
   border: 1px solid var(--border);
@@ -16,6 +20,9 @@
   border-radius: 5px;
 }
 
+.secondForm .ant-input {
+  height: 35px;
+}
 .commonForm .ant-input-affix-wrapper {
   border: 1px solid var(--border);
   border-radius: 5px;
@@ -72,6 +79,16 @@
 .commonForm .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
   background-color: var(--primaryColor);
   border-color: var(--primaryColor);
+}
+
+.commonForm .ant-select.ant-select-in-form-item {
+  height: 35px;
+  width: 70%;
+}
+
+.commonForm .ant-select-single .ant-select-selector {
+  border-color: var(--border);
+
 }
 
 /* =================== Form - End =================== */
@@ -276,6 +293,15 @@
   color: #000;
 }
 /* =================== Breadcrumb - End =================== */
+
+.secondRadio.ant-radio-wrapper .ant-radio {
+align-self: auto;
+margin-top: 7px;
+}
+
+.radioFull.ant-radio-wrapper span.ant-radio+* {
+  width: 100%;
+}
 
 .ant-input:focus,
 .ant-input-focused,

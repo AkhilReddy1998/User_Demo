@@ -9,8 +9,8 @@ function Login() {
   return (
     <div>
       <Header />
-      <div>
-        <div className="bg-White p-2 border border-borderColor rounded-md">
+      <main className="w-[95%] mx-auto">
+        <div className="bg-White p-2 border border-borderColor rounded-md mt-5">
           <Breadcrumb
             separator="|"
             className="commonBreadcrumb"
@@ -56,7 +56,7 @@ function Login() {
             <div onClick={() => navigateTo("/signup")} className="border-t border-t-borderColor pt-4 mt-5 hover:text-primaryColor cursor-pointer text-center">No account? Create one here</div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }
