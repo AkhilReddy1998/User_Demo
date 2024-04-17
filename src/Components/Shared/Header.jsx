@@ -15,6 +15,7 @@ import country10 from "../../Assets/Images/Country/10.jpg";
 import country11 from "../../Assets/Images/Country/11.jpg";
 import country12 from "../../Assets/Images/Country/12.jpg";
 import MegaMenu from "./MegaMenu";
+import CartDropdown from "../Pages/Cart/CartDropdown";
 
 const { Option } = Select;
 
@@ -100,6 +101,8 @@ function Header() {
       key: '2',
     },
   ];
+
+
   return (
     <div className="header_page">
       <div className="bg-bgGray">
@@ -187,14 +190,21 @@ function Header() {
                   <span className="font-medium text-sm">My Account</span>
                 </div>
               </Dropdown>
-              <div className="flex items-center gap-3 cursor-pointer group/icon">
-                <Badge className="commonBadge" count={5} color="#F2273D">
-                  <div className="border group-hover/icon:text-primaryColor rounded-full text-lg w-10 h-10 flex justify-center items-center">
-                    <ShoppingCartOutlined />
-                  </div>
-                </Badge>
-                <span className="font-medium text-sm">$0.00</span>
-              </div>
+
+              <Dropdown
+                overlay={<CartDropdown />}
+                trigger={['click']}
+              >
+                <div className="flex items-center gap-3 cursor-pointer group/icon">
+                  <Badge className="commonBadge" count={1} color="#F2273D">
+                    <div className="border group-hover/icon:text-primaryColor rounded-full text-lg w-10 h-10 flex justify-center items-center">
+                      <ShoppingCartOutlined />
+                    </div>
+                  </Badge>
+                  <span className="font-medium text-sm">$0.00</span>
+                </div>
+
+              </Dropdown>
             </div>
           </div>
         </div>

@@ -18,6 +18,7 @@ import {
 } from "@ant-design/icons";
 import ProductImage1 from "../../../Assets/Images/Products/1.png";
 import Header from "../../Shared/Header";
+import useNavigation from "../../../PageRouting/HandleNavigator";
 
 const categories = [
   "Men",
@@ -245,6 +246,7 @@ function Product() {
   const toggleWishlist = () => {
     setIsInWishlist(!isInWishlist);
   };
+  const { navigateTo } = useNavigation();
   return (
     <div>
       <Header />
@@ -317,6 +319,7 @@ function Product() {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 className="bg-White rounded-md border-[0.5px] border-borderColor cursor-pointer"
+                onClick={() => navigateTo("/product-details")}
               >
                 <div className="relative flex justify-center border-b-borderColor border-b p-3">
                   <img src={ProductImage1} alt="images" className="w-[180px]" />

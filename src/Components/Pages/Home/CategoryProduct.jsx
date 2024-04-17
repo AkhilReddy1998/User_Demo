@@ -17,41 +17,22 @@ import ProductImage5 from "../../../Assets/Images/Products/tv.jpeg";
 import ProductImage6 from "../../../Assets/Images/Products/1.png";
 
 function CategoryProduct() {
-    const [isInWishlist, setIsInWishlist] = useState(false);
-    const [isHovered, setIsHovered] = useState(false);
-    const toggleWishlist = () => {
-        setIsInWishlist(!isInWishlist);
-    };
     const carouselRef = useRef(null);
-    const carouselRefTwo = useRef(null);
 
     const [isBeginning, setIsBeginning] = useState(true);
-    const [isBeginningTwo, setIsBeginningTwo] = useState(true);
     const [isEnd, setIsEnd] = useState(false);
-    const [isEndTwo, setIsEndTwo] = useState(false);
 
     const handleBeforeChange = (prevIndex, currentIndex) => {
         setIsBeginning(currentIndex === 0);
         setIsEnd(currentIndex === responsive.mobile.items - 1);
     };
 
-    const handleBeforeChangeTwo = (prevIndex, currentIndex) => {
-        setIsBeginningTwo(currentIndex === 0);
-        setIsEndTwo(currentIndex === responsiveTwo.mobile.items - 1);
-    };
-
     const handleNextClick = () => {
         carouselRef.current.next();
-    };
-    const handleNextClickTwo = () => {
-        carouselRefTwo.current.next();
     };
 
     const handlePrevClick = () => {
         carouselRef.current.previous();
-    };
-    const handlePrevClickTwo = () => {
-        carouselRefTwo.current.previous();
     };
 
     const responsiveTwo = {
@@ -115,7 +96,6 @@ function CategoryProduct() {
                 <div className="w-[20%]">
 
                     <Carousel
-                        ref={carouselRefTwo}
                         infinite={true}
                         autoPlay={true}
                         autoPlaySpeed={4000}
@@ -123,7 +103,6 @@ function CategoryProduct() {
                         transitionDuration={500}
                         containerClass="carousel-container"
                         responsive={responsiveTwo}
-                        beforeChange={handleBeforeChangeTwo}
                         itemClass="carousel-item-padding-40-px"
                     >
                         <div className="bg-White rounded-md px-3 h-full">

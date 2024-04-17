@@ -13,6 +13,8 @@ import OTP from "../Components/Authentication/OTP";
 import Product from "../Components/Pages/Products";
 import Home from "../Components/Pages/Home";
 import ProductDetails from "../Components/Pages/Products/ProductDetails";
+import Cart from "../Components/Pages/Cart";
+import CartCheckout from "../Components/Pages/Cart/CartCheckout";
 
 const PageRouting = () => {
   return (
@@ -27,6 +29,8 @@ const PageRouting = () => {
         <Route path={APP_ROUTES.DASHBOARD} component={Dashboard} />
         <Route path={APP_ROUTES.PRODUCTS} component={Product} />
         <Route path={APP_ROUTES.PRODUCTDETAILS} component={ProductDetails} />
+        <Route path={APP_ROUTES.CART} component={Cart} />
+        <Route path={APP_ROUTES.CARTCHECKOUT} component={CartCheckout} />
       </Switch>
     </Router>
   );

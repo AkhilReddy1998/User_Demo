@@ -27,6 +27,10 @@ body {
   text-align: center;
 }
 
+.commonBoxshadow {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.175);
+}
+
 .react-multiple-carousel__arrow {
   display: none;
 }
@@ -91,6 +95,28 @@ body {
   top: 50%;
   bottom: 50%;
   background: rgba(255, 255, 255, 0.2);
+}
+.normalTable {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 5px;
+}
+.normalTable th,
+.normalTable td {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 5px;
+  text-align: left;
+}
+.normalTable td:last-child {
+  text-align: right;
+}
+.normalTable th {
+  background-color: #f2f2f2;
+}
+.always-show-controls .ant-input-number-handler-wrap {
+  opacity: 1;
 }
 /* 
 .slidecap h4 {

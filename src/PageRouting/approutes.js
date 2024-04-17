@@ -7,7 +7,9 @@ const APP_ROUTES = {
   OTP: "/otp",
   DASHBOARD: "/dashboard",
   PRODUCTS: "/products",
-  PRODUCTDETAILS: "/product-details"
+  PRODUCTDETAILS: "/product-details",
+  CART: "/cart",
+  CARTCHECKOUT: "/cart-checkout"
 };
 
 export { APP_ROUTES };
