@@ -15,6 +15,11 @@ import Home from "../Components/Pages/Home";
 import ProductDetails from "../Components/Pages/Products/ProductDetails";
 import Cart from "../Components/Pages/Cart";
 import CartCheckout from "../Components/Pages/Cart/CartCheckout";
+import OrderConfirmation from "../Components/Pages/Cart/CartCheckout/OrderConfirmation";
+import MyAccount from "../Components/Pages/MyAccount";
+import MyAddress from "../Components/Pages/MyAccount/MyAddress";
+import MyPersonalDetails from "../Components/Pages/MyAccount/MyPersonalDetails";
+import OrderHistory from "../Components/Pages/MyAccount/OrderHistory";
 
 const PageRouting = () => {
   return (
@@ -31,6 +36,11 @@ const PageRouting = () => {
         <Route path={APP_ROUTES.PRODUCTDETAILS} component={ProductDetails} />
         <Route path={APP_ROUTES.CART} component={Cart} />
         <Route path={APP_ROUTES.CARTCHECKOUT} component={CartCheckout} />
+        <Route path={APP_ROUTES.ORDERCONFIRMATION} component={OrderConfirmation} />
+        <Route path={APP_ROUTES.MYACCOUNT} component={MyAccount} />
+        <Route path={APP_ROUTES.MYADDRESS} component={MyAddress} />
+        <Route path={APP_ROUTES.MYPERSONALDETAILS} component={MyPersonalDetails} />
+        <Route path={APP_ROUTES.ORDERHISTORY} component={OrderHistory} />
       </Switch>
     </Router>
   );

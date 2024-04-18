@@ -89,7 +89,7 @@ function Header() {
   ];
   const items = [
     {
-      label: <a href="/login">Gayu D</a>,
+      label: <a href="/myaccount">Gayu D</a>,
       key: '0',
     },
     {

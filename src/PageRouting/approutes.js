@@ -9,7 +9,12 @@ const APP_ROUTES = {
   PRODUCTS: "/products",
   PRODUCTDETAILS: "/product-details",
   CART: "/cart",
-  CARTCHECKOUT: "/cart-checkout"
+  CARTCHECKOUT: "/cart-checkout",
+  ORDERCONFIRMATION: "/order-confirmation",
+  MYACCOUNT: "/myaccount",
+  MYADDRESS: "/myaddress",
+  MYPERSONALDETAILS: "/personal-details",
+  ORDERHISTORY: "/order-history"
 };
 
 export { APP_ROUTES };

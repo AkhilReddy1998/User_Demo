@@ -40,6 +40,10 @@
   width: 100%;
 }
 
+.secondDate.ant-picker {
+  width: 70%;
+}
+
 .commonForm .ant-input-affix-wrapper .ant-input {
   height: auto;
   font-size: 16px;
