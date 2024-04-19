@@ -31,9 +31,11 @@ import {
 } from "@ant-design/icons";
 import CategoryProduct from "./CategoryProduct";
 import HomeBanner from "./Banner";
+import useNavigation from "../../../PageRouting/HandleNavigator";
 
 function Home() {
     const [isInWishlist, setIsInWishlist] = useState(false);
+    const {navigateTo} = useNavigation()
     const [isHovered, setIsHovered] = useState(false);
     const toggleWishlist = () => {
         setIsInWishlist(!isInWishlist);
@@ -190,6 +192,7 @@ function Home() {
                         <div
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
+                            onClick={() => navigateTo("/products")}
                             className="bg-White rounded-md border-[0.5px] border-borderColor cursor-pointer mx-3"
                         >
                             <div className="relative flex justify-center border-b-borderColor border-b p-3">

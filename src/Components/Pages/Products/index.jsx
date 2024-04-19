@@ -257,10 +257,10 @@ function Product() {
             separator={<RightOutlined />}
             items={[
               {
-                title: "Home",
+                  title:  <div className="cursor-pointer hover:text-primaryColor" onClick={() => navigateTo("/")}>Home</div>,
               },
               {
-                title: "Smart Phones",
+                  title: <div className="cursor-pointer hover:text-primaryColor">Smart Phones</div>,
               },
             ]}
           />

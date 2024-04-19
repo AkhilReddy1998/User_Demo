@@ -16,10 +16,12 @@ import country11 from "../../Assets/Images/Country/11.jpg";
 import country12 from "../../Assets/Images/Country/12.jpg";
 import MegaMenu from "./MegaMenu";
 import CartDropdown from "../Pages/Cart/CartDropdown";
+import useNavigation from "../../PageRouting/HandleNavigator";
 
 const { Option } = Select;
 
 function Header() {
+  const {navigateTo} = useNavigation();
   const LangageSelect = [
     {
       value: "a",
@@ -143,7 +145,7 @@ function Header() {
               <div className="text-sm cursor-pointer hover:text-primaryColor">
                 Compare
               </div>
-              <div className="text-sm cursor-pointer hover:text-primaryColor">
+              <div onClick={() => navigateTo("/wishlist")} className="text-sm cursor-pointer hover:text-primaryColor">
                 Wishlist
               </div>
             </div>
