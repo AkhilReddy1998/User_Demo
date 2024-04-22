@@ -15,7 +15,8 @@ const APP_ROUTES = {
   MYADDRESS: "/myaddress",
   MYPERSONALDETAILS: "/personal-details",
   ORDERHISTORY: "/order-history",
-  WISHLIST: "/wishlist"
+  WISHLIST: "/wishlist",
+  BESTSELLER: "/bestseller"
 };
 
 export { APP_ROUTES };

@@ -21,6 +21,7 @@ import MyAddress from "../Components/Pages/MyAccount/MyAddress";
 import MyPersonalDetails from "../Components/Pages/MyAccount/MyPersonalDetails";
 import OrderHistory from "../Components/Pages/MyAccount/OrderHistory";
 import Wishlist from "../Components/Pages/Wishlist";
+import BestSeller from "../Components/Pages/ExtraPage/BestSeller";
 
 const PageRouting = () => {
   return (
@@ -43,6 +44,8 @@ const PageRouting = () => {
         <Route path={APP_ROUTES.MYPERSONALDETAILS} component={MyPersonalDetails} />
         <Route path={APP_ROUTES.ORDERHISTORY} component={OrderHistory} />
         <Route path={APP_ROUTES.WISHLIST} component={Wishlist} />
+        <Route path={APP_ROUTES.BESTSELLER} component={BestSeller} />
+
       </Switch>
     </Router>
   );

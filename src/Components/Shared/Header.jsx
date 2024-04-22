@@ -214,15 +214,18 @@ function Header() {
       <div className="bg-primaryColor border-y border-y-[0.5px] border-White py-2">
         <div className="w-[95%] mx-auto">
           <div className="flex justify-between items-center">
-            <div className="flex gap-5 items-center text-White">
+            <div className="flex gap-10 items-center text-White">
               <div className="flex text-primaryText items-center gap-2 cursor-pointer bg-secondaryColor py-1.5 px-3 rounded-md">
                 <MegaMenu />
               </div>
-              <div className="cursor-pointer">
-                <span className=" text-sm">Hot Offers</span>
+              <div onClick={() => navigateTo("/bestseller")} className="cursor-pointer">
+                <span className=" text-sm uppercase font-semibold">Best Seller</span>
               </div>
               <div className="cursor-pointer">
-                <span className=" text-sm">Gift boxes</span>
+                <span className=" text-sm uppercase font-semibold">Latest</span>
+              </div>
+              <div className="cursor-pointer">
+                <span className=" text-sm uppercase font-semibold">Top Deals</span>
               </div>
             </div>
           </div>

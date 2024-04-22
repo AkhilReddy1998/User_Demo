@@ -87,7 +87,7 @@ function ProductDetails() {
                 ))}
               </div>
             </div>
-            <div className="w-[50%]">
+            <div className="w-[50%] overflow-y-auto">
               <div className="w-full">
                 <div className="flex gap-1 text-Green text-sm">
                   <CheckOutlined />

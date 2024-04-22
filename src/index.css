@@ -7,7 +7,7 @@
   font-weight: 400;
 }
 
-.secondForm .ant-form-item .ant-form-item-label  {
+.secondForm .ant-form-item .ant-form-item-label {
   text-align: left;
 }
 
@@ -92,7 +92,6 @@
 
 .commonForm .ant-select-single .ant-select-selector {
   border-color: var(--border);
-
 }
 
 /* =================== Form - End =================== */
@@ -268,6 +267,22 @@
 .commonSelect1.ant-select .ant-select-arrow {
   color: var(--primaryText);
 }
+
+.commonSelect2.ant-select:not(.ant-select-customize-input)
+  .ant-select-selector {
+  background-color: var(--primaryText);
+  width: 150px;
+  color: #fff;
+}
+
+.commonSelect2.ant-select .ant-select-arrow {
+  color: #fff;
+}
+
+.commonSelect2.ant-select .ant-select-selection-item  {
+  color: #fff;
+}
+
 /* =================== Select - End =================== */
 /* =================== Segment - Start =================== */
 .commonSegment.ant-segmented .ant-segmented-item-selected {
@@ -299,11 +314,11 @@
 /* =================== Breadcrumb - End =================== */
 
 .secondRadio.ant-radio-wrapper .ant-radio {
-align-self: auto;
-margin-top: 7px;
+  align-self: auto;
+  margin-top: 7px;
 }
 
-.radioFull.ant-radio-wrapper span.ant-radio+* {
+.radioFull.ant-radio-wrapper span.ant-radio + * {
   width: 100%;
 }
 
