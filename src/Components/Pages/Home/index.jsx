@@ -4,20 +4,21 @@ import SupportIcons from "../../../Assets/Images/Icons/support.svg";
 import GuaranteeIcons from "../../../Assets/Images/Icons/guarantee.svg";
 import GiftsIcons from "../../../Assets/Images/Icons/gifts.svg";
 import ShipIcons from "../../../Assets/Images/Icons/ship.svg";
-import ProductImage1 from "../../../Assets/Images/Products/Camera.jpeg";
-import ProductImage2 from "../../../Assets/Images/Products/phone.jpeg";
-import ProductImage3 from "../../../Assets/Images/Products/headphone.jpeg";
-import ProductImage4 from "../../../Assets/Images/Products/speaker.jpeg";
-import ProductImage5 from "../../../Assets/Images/Products/tv.jpeg";
+import ProductImage1 from "../../../Assets/Images/Products/cola.png";
+import ProductImage2 from "../../../Assets/Images/Products/vitaminwater.png";
+import ProductImage3 from "../../../Assets/Images/Products/polandspring.png";
+import ProductImage4 from "../../../Assets/Images/Products/patties.png";
+import ProductImage5 from "../../../Assets/Images/Products/takies.png";
 import ProductImage6 from "../../../Assets/Images/Products/1.png";
-import BannerImage1 from "../../../Assets/Images/Banner/offerbanner-1.jpg";
-import BannerImage2 from "../../../Assets/Images/Banner/offerbanner-2.jpg";
-import BannerImage3 from "../../../Assets/Images/Banner/cbanner-1.jpg";
-import CategoryImage1 from "../../../Assets/Images/Category/watch.jpeg";
-import CategoryImage2 from "../../../Assets/Images/Category/tv.jpeg";
-import CategoryImage3 from "../../../Assets/Images/Category/phones.jpeg";
-import CategoryImage4 from "../../../Assets/Images/Category/laptop.jpeg";
-import CategoryImage5 from "../../../Assets/Images/Category/game.jpeg";
+import BannerImage1 from "../../../Assets/Images/Banner/offerbanner-1.png";
+import BannerImage2 from "../../../Assets/Images/Banner/offerbanner-2.png";
+import BannerImage3 from "../../../Assets/Images/Banner/cbanner-1.png";
+import CategoryImage1 from "../../../Assets/Images/Category/baverages.png";
+import CategoryImage2 from "../../../Assets/Images/Category/snacks.png";
+import CategoryImage3 from "../../../Assets/Images/Category/forzen.png";
+import CategoryImage4 from "../../../Assets/Images/Category/gum.png";
+import CategoryImage5 from "../../../Assets/Images/Category/health & beauty.png";
+import CategoryImage6 from "../../../Assets/Images/Category/disposables.png";
 import Carousel from "react-multi-carousel";
 import SpecialImage from "../../../Assets/Images/Banner/special-Gift.jpeg"
 import {
@@ -192,7 +193,7 @@ function Home() {
                         <div
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
-                            onClick={() => navigateTo("/products")}
+                            onClick={() => navigateTo("/product-details")}
                             className="bg-White rounded-md border-[0.5px] border-borderColor cursor-pointer mx-3"
                         >
                             <div className="relative flex justify-center border-b-borderColor border-b p-3">
@@ -216,7 +217,7 @@ function Home() {
                             <div className="p-5">
                                 <div className={isHovered ? "hidden" : "block"}>
                                     <div className="font-medium">
-                                        Apple iPhone 15 (Blue, 128 GB)
+                                    Coca-Cola - (20 oz/24 ct Bottle)
                                     </div>
                                     <div className="flex gap-2 items-center mt-2">
                                         <Rate className="commonRate" allowHalf defaultValue={4.5} />
@@ -227,14 +228,14 @@ function Home() {
                                 </div>
                                 {isHovered && (
                                     <button className="bg-primaryText h-10 w-full text-White rounded-md mb-">
-                                        Add to Card
+                                        Add to Cart
                                     </button>
                                 )}
                                 <div className="flex gap-3 items-center mt-2">
-                                    <h6 className="font-medium text-lg mb-0">$99.50</h6>
+                                    <h6 className="font-medium text-lg mb-0">$25.99</h6>
                                     <p className="text-secondaryText text-xs  mb-0">
-                                        <span className="line-through text-base">$118.00</span>{" "}
-                                        (Save $18.50)
+                                        <span className="line-through text-base">$27.99</span>{" "}
+                                        (Save $2.00)
                                     </p>
                                     <p className="mb-0 text-sm font-medium text-Green">10% Off</p>
                                 </div>
@@ -266,25 +267,25 @@ function Home() {
                             <div className="p-5">
                                 <div className={isHovered ? "hidden" : "block"}>
                                     <div className="font-medium">
-                                        Apple iPhone 15 (Blue, 128 GB)
+                                    Vitamin Water Energy (20 CT)
                                     </div>
                                     <div className="flex gap-2 items-center mt-2">
                                         <Rate className="commonRate" allowHalf defaultValue={4.5} />
                                         <span className="text-xs text-secondaryText font-medium">
-                                            25,288
+                                            1,500
                                         </span>
                                     </div>
                                 </div>
                                 {isHovered && (
                                     <button className="bg-primaryText h-10 w-full text-White rounded-md mb-">
-                                        Add to Card
+                                        Add to Cart 
                                     </button>
                                 )}
                                 <div className="flex gap-3 items-center mt-2">
-                                    <h6 className="font-medium text-lg mb-0">$99.50</h6>
+                                    <h6 className="font-medium text-lg mb-0">$17.99</h6>
                                     <p className="text-secondaryText text-xs  mb-0">
-                                        <span className="line-through text-base">$118.00</span>{" "}
-                                        (Save $18.50)
+                                        <span className="line-through text-base">$20.99</span>{" "}
+                                        (Save $3.00)
                                     </p>
                                     <p className="mb-0 text-sm font-medium text-Green">10% Off</p>
                                 </div>
@@ -316,27 +317,27 @@ function Home() {
                             <div className="p-5">
                                 <div className={isHovered ? "hidden" : "block"}>
                                     <div className="font-medium">
-                                        Apple iPhone 15 (Blue, 128 GB)
+                                    Poland Spring (16 oz/40 ct)
                                     </div>
                                     <div className="flex gap-2 items-center mt-2">
                                         <Rate className="commonRate" allowHalf defaultValue={4.5} />
                                         <span className="text-xs text-secondaryText font-medium">
-                                            25,288
+                                            5,288
                                         </span>
                                     </div>
                                 </div>
                                 {isHovered && (
                                     <button className="bg-primaryText h-10 w-full text-White rounded-md mb-">
-                                        Add to Card
+                                        Add to Cart
                                     </button>
                                 )}
                                 <div className="flex gap-3 items-center mt-2">
-                                    <h6 className="font-medium text-lg mb-0">$99.50</h6>
+                                    <h6 className="font-medium text-lg mb-0">$8.49</h6>
                                     <p className="text-secondaryText text-xs  mb-0">
-                                        <span className="line-through text-base">$118.00</span>{" "}
-                                        (Save $18.50)
+                                        <span className="line-through text-base">$9.49</span>{" "}
+                                        (Save $1.00)
                                     </p>
-                                    <p className="mb-0 text-sm font-medium text-Green">10% Off</p>
+                                    <p className="mb-0 text-sm font-medium text-Green">5% Off</p>
                                 </div>
                             </div>
                         </div>
@@ -366,25 +367,25 @@ function Home() {
                             <div className="p-5">
                                 <div className={isHovered ? "hidden" : "block"}>
                                     <div className="font-medium">
-                                        Apple iPhone 15 (Blue, 128 GB)
+                                    Tower Isle's Beef Patties (5 oz/50 ct)
                                     </div>
                                     <div className="flex gap-2 items-center mt-2">
                                         <Rate className="commonRate" allowHalf defaultValue={4.5} />
                                         <span className="text-xs text-secondaryText font-medium">
-                                            25,288
+                                            2,500
                                         </span>
                                     </div>
                                 </div>
                                 {isHovered && (
                                     <button className="bg-primaryText h-10 w-full text-White rounded-md mb-">
-                                        Add to Card
+                                        Add to Cart
                                     </button>
                                 )}
                                 <div className="flex gap-3 items-center mt-2">
-                                    <h6 className="font-medium text-lg mb-0">$99.50</h6>
+                                    <h6 className="font-medium text-lg mb-0">$53.99</h6>
                                     <p className="text-secondaryText text-xs  mb-0">
-                                        <span className="line-through text-base">$118.00</span>{" "}
-                                        (Save $18.50)
+                                        <span className="line-through text-base">$63.99</span>{" "}
+                                        (Save $10.00)
                                     </p>
                                     <p className="mb-0 text-sm font-medium text-Green">10% Off</p>
                                 </div>
@@ -416,25 +417,25 @@ function Home() {
                             <div className="p-5">
                                 <div className={isHovered ? "hidden" : "block"}>
                                     <div className="font-medium">
-                                        Apple iPhone 15 (Blue, 128 GB)
+                                    Takis Fuego (3.25 oz/20 ct)
                                     </div>
                                     <div className="flex gap-2 items-center mt-2">
                                         <Rate className="commonRate" allowHalf defaultValue={4.5} />
                                         <span className="text-xs text-secondaryText font-medium">
-                                            25,288
+                                            15,288
                                         </span>
                                     </div>
                                 </div>
                                 {isHovered && (
                                     <button className="bg-primaryText h-10 w-full text-White rounded-md mb-">
-                                        Add to Card
+                                        Add to Cart
                                     </button>
                                 )}
                                 <div className="flex gap-3 items-center mt-2">
-                                    <h6 className="font-medium text-lg mb-0">$99.50</h6>
+                                    <h6 className="font-medium text-lg mb-0">$31.99</h6>
                                     <p className="text-secondaryText text-xs  mb-0">
-                                        <span className="line-through text-base">$118.00</span>{" "}
-                                        (Save $18.50)
+                                        <span className="line-through text-base">$33.99</span>{" "}
+                                        (Save $3.00)
                                     </p>
                                     <p className="mb-0 text-sm font-medium text-Green">10% Off</p>
                                 </div>
@@ -534,41 +535,45 @@ function Home() {
                         beforeChange={handleBeforeChangeTwo}
                         itemClass="carousel-item-padding-40-px"
                     >
-                        <div className="bg-White rounded-md mx-3 group/textred cursor-pointer">
-                            <div className="flex justify-center">
-                                <img src={CategoryImage1} alt="images" />
+                        <div
+                            onClick={() => navigateTo("/products")}
+                        >
+                            <div className="bg-White rounded-md mx-3 group/textred cursor-pointer">
+                                <div className="flex justify-center">
+                                    <img src={CategoryImage1} alt="images" />
+                                </div>
+                                <h2 className="text-center uppercase border-t py-3 group-hover/textred:text-primaryColor">Beverages</h2>
                             </div>
-                            <h2 className="text-center uppercase border-t py-3 group-hover/textred:text-primaryColor">Watches</h2>
                         </div>
                         <div className="bg-White rounded-md mx-3 group/textred cursor-pointer">
                             <div className="flex justify-center">
                                 <img src={CategoryImage2} alt="images" />
                             </div>
-                            <h2 className="text-center uppercase border-t py-3 group-hover/textred:text-primaryColor">Tv</h2>
+                            <h2 className="text-center uppercase border-t py-3 group-hover/textred:text-primaryColor">Snacks</h2>
                         </div>
                         <div className="bg-White rounded-md mx-3 group/textred cursor-pointer">
                             <div className="flex justify-center">
                                 <img src={CategoryImage3} alt="images" />
                             </div>
-                            <h2 className="text-center uppercase border-t py-3 group-hover/textred:text-primaryColor">Smart Phone</h2>
+                            <h2 className="text-center uppercase border-t py-3 group-hover/textred:text-primaryColor">Frozen</h2>
                         </div>
                         <div className="bg-White rounded-md mx-3 group/textred cursor-pointer">
                             <div className="flex justify-center">
                                 <img src={CategoryImage4} alt="images" />
                             </div>
-                            <h2 className="text-center uppercase border-t py-3 group-hover/textred:text-primaryColor">Laptop</h2>
+                            <h2 className="text-center uppercase border-t py-3 group-hover/textred:text-primaryColor">Gum</h2>
                         </div>
                         <div className="bg-White rounded-md mx-3 group/textred cursor-pointer">
                             <div className="flex justify-center">
                                 <img src={CategoryImage5} alt="images" />
                             </div>
-                            <h2 className="text-center uppercase border-t py-3 group-hover/textred:text-primaryColor">Game</h2>
+                            <h2 className="text-center uppercase border-t py-3 group-hover/textred:text-primaryColor">Health & Beauty</h2>
                         </div>
                         <div className="bg-White rounded-md mx-3 group/textred cursor-pointer">
                             <div className="flex justify-center">
-                                <img src={CategoryImage2} alt="images" />
+                                <img src={CategoryImage6} alt="images" />
                             </div>
-                            <h2 className="text-center uppercase border-t py-3 group-hover/textred:text-primaryColor">Tv</h2>
+                            <h2 className="text-center uppercase border-t py-3 group-hover/textred:text-primaryColor">Disposables</h2>
                         </div>
                     </Carousel>
                 </section>
