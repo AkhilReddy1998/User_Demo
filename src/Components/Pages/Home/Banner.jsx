@@ -1,9 +1,11 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
-import TopBanner1 from "../../../Assets/Images/Banner/latestbanner-1.jpg";
-import TopBanner2 from "../../../Assets/Images/Banner/latestbanner-2.jpg";
-import Banner1 from "../../../Assets/Images/Banner/slider-1.jpg";
-import Banner2 from "../../../Assets/Images/Banner/slider-2.jpg";
+import TopBanner1 from "../../../Assets/Images/Banner/Banner1.png";
+import TopBanner2 from "../../../Assets/Images/Banner/Banner2.png";
+import TopBanner3 from "../../../Assets/Images/Banner/Banner3.png";
+import TopBanner4 from "../../../Assets/Images/Banner/Banner4.png";
+import Banner1 from "../../../Assets/Images/Banner/slider-1.png";
+import Banner2 from "../../../Assets/Images/Banner/slider-2.png";
 
 function HomeBanner() {
 
@@ -27,7 +29,15 @@ function HomeBanner() {
     };
     return (
         <>
-            <div className="w-[20%] bg-White rounded-md h-full">
+            {/* <div className="w-[20%] bg-White rounded-md h-full">
+            </div> */}
+              <div className="w-[20%] flex flex-col gap-6">
+                <div className="beffect">
+                    <img src={TopBanner1} alt="images" className="w-full h-full rounded-md cursor-pointer" />
+                </div>
+                <div className="beffect">
+                    <img src={TopBanner2} alt="images" className="w-full h-full rounded-md cursor-pointer" />
+                </div>
             </div>
             <div className="w-[60%]">
                 <Carousel
@@ -46,10 +56,10 @@ function HomeBanner() {
                             <img src={Banner1} alt="images" className="rounded-md" />
                         </div>
                         <div className="absolute top-[25%] w-[50%] mx-10 overflow-hidden slidecap">
-                            <h4 className="text-White uppercase mb-5">spring - summer 2020</h4>
-                            <h2 className="text-White text-6xl font-bold">New Arrivals</h2>
-                            <p className="text-White text-sm">Stock up on sportswear and limited edition collections on our awesome mid-season sale.</p>
-                            <button className="mt-7 uppercase bg-primaryColor hover:bg-[#000] h-12 px-5 rounded-md text-White text-sm font-medium cursor-pointer ">Shop now</button>
+                            {/* <h4 className="text-White uppercase mb-5">spring - summer 2020</h4>
+                            <h2 className="text-White text-6xl font-bold">New Arrivals</h2> */}
+                            {/* <p className="text-White text-sm">Stock up on sportswear and limited edition collections on our awesome mid-season sale.</p> */}
+                            {/* <button className="mt-7 uppercase bg-primaryColor hover:bg-[#000] h-12 px-5 rounded-md text-White text-sm font-medium cursor-pointer ">Shop now</button> */}
                         </div>
                     </div>
                     <div>
@@ -57,20 +67,20 @@ function HomeBanner() {
                             <img src={Banner2} alt="images" className="rounded-md" />
                         </div>
                         <div className="absolute top-[25%] w-[50%] mx-10 overflow-hidden slidecap">
-                            <h4 className="text-White uppercase mb-5">spring - summer 2020</h4>
+                            {/* <h4 className="text-White uppercase mb-5">spring - summer 2020</h4>
                             <h2 className="text-White text-6xl font-bold">New Arrivals</h2>
                             <p className="text-White text-sm">Stock up on sportswear and limited edition collections on our awesome mid-season sale.</p>
-                            <button className="mt-7 uppercase bg-primaryColor hover:bg-[#000] h-12 px-5 rounded-md text-White text-sm font-medium cursor-pointer ">Shop now</button>
+                            <button className="mt-7 uppercase bg-primaryColor hover:bg-[#000] h-12 px-5 rounded-md text-White text-sm font-medium cursor-pointer ">Shop now</button> */}
                         </div>
                     </div>
                 </Carousel>
             </div>
             <div className="w-[20%] flex flex-col gap-6">
                 <div className="beffect">
-                    <img src={TopBanner1} alt="images" className="w-full h-full rounded-md cursor-pointer" />
+                    <img src={TopBanner3} alt="images" className="w-full h-full rounded-md cursor-pointer" />
                 </div>
                 <div className="beffect">
-                    <img src={TopBanner2} alt="images" className="w-full h-full rounded-md cursor-pointer" />
+                    <img src={TopBanner4} alt="images" className="w-full h-full rounded-md cursor-pointer" />
                 </div>
             </div></>
     )

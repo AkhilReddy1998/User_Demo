@@ -253,14 +253,14 @@ function Product() {
       <main className="w-[95%] mx-auto">
         <div className="bg-White mt-5 py-2 px-4">
           <Breadcrumb
-          className="commonBreadcrumb"
+            className="commonBreadcrumb"
             separator={<RightOutlined />}
             items={[
               {
-                  title:  <div className="cursor-pointer hover:text-primaryColor" onClick={() => navigateTo("/")}>Home</div>,
+                title: <div className="cursor-pointer hover:text-primaryColor" onClick={() => navigateTo("/")}>Home</div>,
               },
               {
-                  title: <div className="cursor-pointer hover:text-primaryColor">Smart Phones</div>,
+                title: <div className="cursor-pointer hover:text-primaryColor">Smart Phones</div>,
               },
             ]}
           />
@@ -318,12 +318,13 @@ function Product() {
               <div
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
-                className="bg-White rounded-md border-[0.5px] border-borderColor cursor-pointer"
-                onClick={() => navigateTo("/product-details")}
+                className="bg-White rounded-md border-[0.5px] border-borderColor "
               >
                 <div className="relative flex justify-center border-b-borderColor border-b p-3">
-                  <img src={ProductImage1} alt="images" className="w-[180px]" />
-                  <div className="absolute right-5 cursor-pointer">
+                  <div onClick={() => navigateTo("/product-details")} className="cursor-pointer">
+                    <img src={ProductImage1} alt="images" className="w-[180px]" />
+                  </div>
+                  <div className="absolute right-5 cursor-pointer bg-White z-7">
                     {isInWishlist ? (
                       <HeartFilled
                         onClick={toggleWishlist}
