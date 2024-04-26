@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Breadcrumb, Rate } from "antd";
+import React, { useState, useEffect } from "react";
+import { Breadcrumb, Rate, message } from "antd";
 import {
   CheckOutlined,
   InfoCircleOutlined,
@@ -18,6 +18,8 @@ import Info from "../../../Assets/Images/Icons/Info.svg";
 import Header from "../../Shared/Header";
 import ReturnImage from "../../../Assets/Images/Icons/return.svg";
 import WatchingImage from "../../../Assets/Images/Icons/watch.svg";
+import axios from "axios";
+import { base_url } from "../../BaseUrl/Url";
 
 function ProductDetails() {
   const productImages = [
@@ -36,6 +38,7 @@ function ProductDetails() {
   const handleImageClick = (imageUrl) => {
     setSelectProductimage(imageUrl);
   };
+
   return (
     <div>
       <Header />
@@ -72,11 +75,10 @@ function ProductDetails() {
                   <div
                     onClick={() => handleImageClick(imageUrl)}
                     key={index}
-                    className={`cursor-pointer border rounded-md p-2 flex justify-center w-[70px] h-[70px] ${
-                      imageUrl === selectProductimages
+                    className={`cursor-pointer border rounded-md p-2 flex justify-center w-[70px] h-[70px] ${imageUrl === selectProductimages
                         ? "border-primaryText"
                         : "border-borderColor"
-                    }`}
+                      }`}
                   >
                     <img
                       src={imageUrl}
@@ -282,14 +284,19 @@ function ProductDetails() {
                   <div className="flex w-full mt-4">
                     <div className="w-[20%] text-sm">Returns:</div>
                     <div className="w-[80%]">
-                      <span className="text-secondaryText text-sm mt-3">30 days returns. Buyer pays for return shipping.</span>
-                      <span  className="mb-0 underline text-sm cursor-pointer hover:text-primaryColor">{" "}See Details</span>
+                      <span className="text-secondaryText text-sm mt-3">
+                        30 days returns. Buyer pays for return shipping.
+                      </span>
+                      <span className="mb-0 underline text-sm cursor-pointer hover:text-primaryColor">
+                        {" "}
+                        See Details
+                      </span>
                     </div>
-                    </div>
-                    <div className="flex w-full mt-4">
+                  </div>
+                  <div className="flex w-full mt-4">
                     <div className="w-[20%] text-sm">Payments:</div>
                     <div className="w-[80%]"></div>
-                    </div>
+                  </div>
                 </div>
               </div>
             </div>
