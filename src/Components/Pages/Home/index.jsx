@@ -242,7 +242,7 @@ function Home() {
                                     key={index}
                                     onMouseEnter={() => setIsHovered(true)}
                                     onMouseLeave={() => setIsHovered(false)}
-                                    onClick={() => {navigateTo("/products"); console.log(item,"???,index")}}
+                                    onClick={() => {navigateTo("/product-details"); console.log(item,"???,index")}}
                                     className="bg-White rounded-md border-[0.5px] border-borderColor cursor-pointer mx-3"
                                 >
                                     <div className="relative flex justify-center border-b-borderColor border-b p-3">
