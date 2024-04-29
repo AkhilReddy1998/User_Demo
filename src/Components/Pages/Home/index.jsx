@@ -4,7 +4,7 @@ import SupportIcons from "../../../Assets/Images/Icons/support.svg";
 import GuaranteeIcons from "../../../Assets/Images/Icons/guarantee.svg";
 import GiftsIcons from "../../../Assets/Images/Icons/gifts.svg";
 import ShipIcons from "../../../Assets/Images/Icons/ship.svg";
-import ProductImage1 from "../../../Assets/Images/Products/cola.png";
+import ProductImage1 from "../../../Assets/Images/Products/1.png";
 import ProductImage2 from "../../../Assets/Images/Products/vitaminwater.png";
 import ProductImage3 from "../../../Assets/Images/Products/polandspring.png";
 import ProductImage4 from "../../../Assets/Images/Products/patties.png";
@@ -33,6 +33,7 @@ import HomeBanner from "./Banner";
 import useNavigation from "../../../PageRouting/HandleNavigator";
 import axios from "axios";
 import { base_url } from "../../BaseUrl/Url";
+import { Link } from "react-router-dom";
 
 function Home() {
     const [isInWishlist, setIsInWishlist] = useState(false);
@@ -238,61 +239,66 @@ function Home() {
                     >
                         {data.length > 0 ? (
                             data.map((item, index) => (
-                                <div
-                                    key={index}
-                                    onMouseEnter={() => setIsHovered(true)}
-                                    onMouseLeave={() => setIsHovered(false)}
-                                    onClick={() => {navigateTo("/products"); console.log(item,"???,index")}}
-                                    className="bg-White rounded-md border-[0.5px] border-borderColor cursor-pointer mx-3"
-                                >
-                                    <div className="relative flex justify-center border-b-borderColor border-b p-3">
-                                        <img src={ProductImage2} alt="images" className="w-[180px]" /> {/* Assuming there's an 'image' property in your data */}
-                                        <div className="absolute right-5 cursor-pointer">
-                                            {isInWishlist ? (
-                                                <HeartFilled
-                                                    onClick={toggleWishlist}
-                                                    className="text-primaryColor"
-                                                    style={{ fontSize: "24px", cursor: "pointer" }}
-                                                />
-                                            ) : (
-                                                <HeartOutlined
-                                                    onClick={toggleWishlist}
-                                                    className="text-secondaryText"
-                                                    style={{ fontSize: "24px", cursor: "pointer" }}
-                                                />
-                                            )}
-                                        </div>
-                                    </div>
-                                    <div className="p-5">
-                                        <div className={isHovered ? "hidden" : "block"}>
-                                            <div className="font-medium">
-                                                {item.name}
+                                <div key={index}>
+                                    <Link
+                                        to={{ pathname: "/products", state: { item: item } }}
+                                        className="bg-White rounded-md border-[0.5px] border-borderColor cursor-pointer mx-3"
+                                    >
+                                        <div
+                                            onMouseEnter={() => setIsHovered(true)}
+                                            onMouseLeave={() => setIsHovered(false)}
+                                            className="bg-White rounded-md border-[0.5px] border-borderColor cursor-pointer mx-3"
+                                        >
+                                            <div className="relative flex justify-center border-b-borderColor border-b p-3">
+                                                <img src={ProductImage1} alt="images" className="w-[180px]" /> {/* Assuming there's an 'image' property in your data */}
+                                                <div className="absolute right-5 cursor-pointer">
+                                                    {isInWishlist ? (
+                                                        <HeartFilled
+                                                            onClick={toggleWishlist}
+                                                            className="text-primaryColor"
+                                                            style={{ fontSize: "24px", cursor: "pointer" }}
+                                                        />
+                                                    ) : (
+                                                        <HeartOutlined
+                                                            onClick={toggleWishlist}
+                                                            className="text-secondaryText"
+                                                            style={{ fontSize: "24px", cursor: "pointer" }}
+                                                        />
+                                                    )}
+                                                </div>
                                             </div>
-                                            <div className="flex gap-2 items-center mt-2">
-                                                <Rate className="commonRate" allowHalf defaultValue={item.rating} /> {/* Assuming there's a 'rating' property in your data */}
-                                                <span className="text-xs text-secondaryText font-medium">
-                                                    {item.price}
-                                                </span> {/* Assuming there's a 'price' property in your data */}
+                                            <div className="p-5">
+                                                <div className={isHovered ? "hidden" : "block"}>
+                                                    <div className="font-medium">
+                                                        {item.name}
+                                                    </div>
+                                                    <div className="flex gap-2 items-center mt-2">
+                                                        <Rate className="commonRate" allowHalf defaultValue={item.rating} /> {/* Assuming there's a 'rating' property in your data */}
+                                                        <span className="text-xs text-secondaryText font-medium">
+                                                            {item.price}
+                                                        </span> {/* Assuming there's a 'price' property in your data */}
+                                                    </div>
+                                                </div>
+                                                {isHovered && (
+                                                    <button className="bg-primaryText h-10 w-full text-White rounded-md mb-">
+                                                        Add to Cart
+                                                    </button>
+                                                )}
+                                                <div className="flex gap-3 items-center mt-2">
+                                                    <h6 className="font-medium text-lg mb-0">{item.discountedPrice}</h6> {/* Assuming there's a 'discountedPrice' property in your data */}
+                                                    <p className="text-secondaryText text-xs  mb-0">
+                                                        <span className="line-through text-base">{item.originalPrice}</span> {/* Assuming there's an 'originalPrice' property in your data */}
+                                                        (Save {item.savings}) {/* Assuming there's a 'savings' property in your data */}
+                                                    </p>
+                                                    <p className="mb-0 text-sm font-medium text-Green">{item.discount}% Off</p> {/* Assuming there's a 'discount' property in your data */}
+                                                </div>
                                             </div>
                                         </div>
-                                        {isHovered && (
-                                            <button className="bg-primaryText h-10 w-full text-White rounded-md mb-">
-                                                Add to Cart
-                                            </button>
-                                        )}
-                                        <div className="flex gap-3 items-center mt-2">
-                                            <h6 className="font-medium text-lg mb-0">{item.discountedPrice}</h6> {/* Assuming there's a 'discountedPrice' property in your data */}
-                                            <p className="text-secondaryText text-xs  mb-0">
-                                                <span className="line-through text-base">{item.originalPrice}</span> {/* Assuming there's an 'originalPrice' property in your data */}
-                                                (Save {item.savings}) {/* Assuming there's a 'savings' property in your data */}
-                                            </p>
-                                            <p className="mb-0 text-sm font-medium text-Green">{item.discount}% Off</p> {/* Assuming there's a 'discount' property in your data */}
-                                        </div>
-                                    </div>
+                                    </Link>
                                 </div>
                             ))
                         ) : (
-                            <p style={{fontWeight:"bold", color:"red"}}>Data Unavailable</p>
+                            <p style={{ fontWeight: "bold", color: "red" }}>Data Unavailable</p>
                         )}
 
                         {/* <div
