@@ -1,8 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
     LeftOutlined,
     RightOutlined,
 } from "@ant-design/icons";
+import axios from 'axios';
 import Carousel from "react-multi-carousel";
 import prod1 from "../../../Assets/Images/Icons/chair.png";
 import prod2 from "../../../Assets/Images/Icons/phone.png";
@@ -15,12 +16,14 @@ import ProductImage3 from "../../../Assets/Images/Products/headphone.jpeg";
 import ProductImage4 from "../../../Assets/Images/Products/speaker.jpeg";
 import ProductImage5 from "../../../Assets/Images/Products/tv.jpeg";
 import ProductImage6 from "../../../Assets/Images/Products/1.png";
+import ProductService from "../../../Services/ProductService";
 
 function CategoryProduct() {
     const carouselRef = useRef(null);
 
     const [isBeginning, setIsBeginning] = useState(true);
     const [isEnd, setIsEnd] = useState(false);
+    const [productList, setProductList] = useState([]);
 
     const handleBeforeChange = (prevIndex, currentIndex) => {
         setIsBeginning(currentIndex === 0);
@@ -71,6 +74,24 @@ function CategoryProduct() {
             items: 1,
         },
     };
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                let payload = {
+                    page: 1,
+                    limit: 14,
+                };
+                const result = await ProductService.ProductList(payload);
+                setProductList(result.data.data.list);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+    
+        fetchData();
+    }, []);
+    
     return (
         <>
             <div className="flex justify-between items-center border-b border-b-borderDark pb-2 mb-10">
@@ -160,35 +181,19 @@ function CategoryProduct() {
                         beforeChange={handleBeforeChange}
                         itemClass="carousel-item-padding-40-px"
                     >
-                        <div className="flex flex-col gap-6 mx-3">
+                       {productList?.map((item, idx) => (
+                        <div key={idx} className="flex flex-col gap-6 mx-3">
                             <div className="bg-White p-3 rounded-md flex items-center">
                                 <div className="w-[100px]">
                                     <img src={ProductImage3} alt="images" className="w-full h-full" />
                                 </div>
                                 <div>
-                                    <Rate className="commonRate mb-3" allowHalf defaultValue={4.5} />
+                                    <Rate className="commonRate mb-3" allowHalf defaultValue={item?.review_id?.rating} />
                                     <div className="font-regular">
-                                        FUJIFILM Instax Mini 9 Instant Camera
+                                       {item.name}
                                     </div>
                                     <div className="flex gap-3 items-center mt-2">
-                                        <h6 className="font-semibold text-base mb-0">$99.50</h6>
-                                        <p className="text-secondaryText text-xs  mb-0">
-                                            <span className="line-through text-sm">$118.00</span>{" "}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="bg-White p-3 rounded-md flex items-center">
-                                <div className="w-[100px]">
-                                    <img src={ProductImage4} alt="images" className="w-full h-full" />
-                                </div>
-                                <div>
-                                    <Rate className="commonRate mb-3" allowHalf defaultValue={4.5} />
-                                    <div className="font-regular">
-                                        Apple iPhone 15 (White, 64 GB)
-                                    </div>
-                                    <div className="flex gap-3 items-center mt-2">
-                                        <h6 className="font-semibold text-base mb-0">$99.50</h6>
+                                        <h6 className="font-semibold text-base mb-0">{item.rate}</h6>
                                         <p className="text-secondaryText text-xs  mb-0">
                                             <span className="line-through text-sm">$118.00</span>{" "}
                                         </p>
@@ -196,6 +201,7 @@ function CategoryProduct() {
                                 </div>
                             </div>
                         </div>
+                         ))}
                         <div className="flex flex-col gap-6 mx-3">
                             <div className="bg-White p-3 rounded-md flex items-center">
                                 <div className="w-[100px]">

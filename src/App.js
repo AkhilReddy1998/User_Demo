@@ -1,4 +1,5 @@
 import "./App.css";
+import React from 'react';
 import { PageRouting } from "./PageRouting";
 import "antd/dist/reset.css";
 import { ConfigProvider } from "antd";
