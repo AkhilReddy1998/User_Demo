@@ -157,7 +157,7 @@ function Header() {
           <div className="flex justify-between items-center  h-[70px]">
             <div className="logo flex items-center">
               <img src={Logo} alt="images" className="w-[60px]" />
-              <div className="font-semibold text-lg">AV Sore</div>
+              <div className="font-semibold text-lg">AV Store</div>
             </div>
             <div className="w-[60%]">
               <Input.Group compact className="commonSearch">
