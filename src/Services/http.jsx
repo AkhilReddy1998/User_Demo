@@ -26,8 +26,7 @@ http.interceptors.response.use(
   },
   (error) => {
       return new Promise((resolve, reject) => {
-          const originalRequest = error.config
-          const refreshToken = localStorage.getItem('token')
+
           if (error.response && error.response.status === 401) {
          
           }

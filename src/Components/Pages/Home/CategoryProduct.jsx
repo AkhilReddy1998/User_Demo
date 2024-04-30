@@ -3,7 +3,6 @@ import {
     LeftOutlined,
     RightOutlined,
 } from "@ant-design/icons";
-import axios from 'axios';
 import Carousel from "react-multi-carousel";
 import prod1 from "../../../Assets/Images/Icons/chair.png";
 import prod2 from "../../../Assets/Images/Icons/phone.png";
@@ -13,7 +12,6 @@ import { Rate } from "antd";
 import ProductImage1 from "../../../Assets/Images/Products/Camera.jpeg";
 import ProductImage2 from "../../../Assets/Images/Products/phone.jpeg";
 import ProductImage3 from "../../../Assets/Images/Products/headphone.jpeg";
-import ProductImage4 from "../../../Assets/Images/Products/speaker.jpeg";
 import ProductImage5 from "../../../Assets/Images/Products/tv.jpeg";
 import ProductImage6 from "../../../Assets/Images/Products/1.png";
 import ProductService from "../../../Services/ProductService";
@@ -190,10 +188,10 @@ function CategoryProduct() {
                                 <div>
                                     <Rate className="commonRate mb-3" allowHalf defaultValue={item?.review_id?.rating} />
                                     <div className="font-regular">
-                                       {item.name}
+                                       {item?.name}
                                     </div>
                                     <div className="flex gap-3 items-center mt-2">
-                                        <h6 className="font-semibold text-base mb-0">{item.rate}</h6>
+                                        <h6 className="font-semibold text-base mb-0">{item?.rate}</h6>
                                         <p className="text-secondaryText text-xs  mb-0">
                                             <span className="line-through text-sm">$118.00</span>{" "}
                                         </p>
