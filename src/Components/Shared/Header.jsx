@@ -1,5 +1,5 @@
 import { CaretDownFilled, ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Badge, Dropdown, Input, Select } from "antd";
 import Logo from "../../Assets/Images/Menu/logo.png";
 import country1 from "../../Assets/Images/Country/1.jpg";
@@ -21,7 +21,7 @@ import useNavigation from "../../PageRouting/HandleNavigator";
 const { Option } = Select;
 
 function Header() {
-  const {navigateTo} = useNavigation();
+  const { navigateTo } = useNavigation();
   const LangageSelect = [
     {
       value: "a",

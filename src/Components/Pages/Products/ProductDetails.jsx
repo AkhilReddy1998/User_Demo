@@ -20,6 +20,7 @@ import ReturnImage from "../../../Assets/Images/Icons/return.svg";
 import WatchingImage from "../../../Assets/Images/Icons/watch.svg";
 import axios from "axios";
 import { base_url } from "../../BaseUrl/Url";
+import { useLocation } from "react-router-dom";
 
 function ProductDetails() {
   const productImages = [
@@ -38,6 +39,11 @@ function ProductDetails() {
   const handleImageClick = (imageUrl) => {
     setSelectProductimage(imageUrl);
   };
+
+  const location = useLocation();
+  const { item } = location.state;
+
+  console.log(item,"item")
 
   return (
     <div>
@@ -96,8 +102,7 @@ function ProductDetails() {
                   <span>In Stock</span>
                 </div>
                 <h4 className="font-medium text-xl mt-2">
-                  Restored Apple iPhone 14 - Carrier Unlocked - 128GB Space Red
-                  - MQ8N3LL/A (Refurbished)
+                 {item.name}
                 </h4>
                 <div className="flex gap-3 items-center mt-2">
                   <div className="flex gap-2 items-center">
@@ -120,13 +125,13 @@ function ProductDetails() {
                   </div>
                 </div>
                 <div className="flex gap-3 items-baseline mt-4">
-                  <h6 className="font-semibold text-2xl mb-0">$99.50</h6>
+                  <h6 className="font-semibold text-2xl mb-0">{item.rate}</h6>
                   <p className="text-secondaryText text-base  mb-0">
                     <span className="line-through text-lg">$118.00</span> (Save
                     $18.50)
                   </p>
                   <p className="mb-0 text-base font-medium text-Green">
-                    10% Off
+                    {item.discount}
                   </p>
                 </div>
                 <div className="flex gap-2 items-baseline mt-2">
@@ -153,7 +158,7 @@ function ProductDetails() {
                     <div>
                       <div className="flex gap-3">
                         <div className="font-light text-base">
-                          Color: <span className="font-medium">Red</span>
+                          Color: <span className="font-medium">{item.color}</span>
                         </div>
                       </div>
                       <div className="flex gap-3 mt-3">

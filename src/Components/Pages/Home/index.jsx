@@ -77,36 +77,75 @@ function Home() {
     };
 
     useEffect(() => {
-        async function ProductList() {
+        async function getProductList() {
+            const requestBody = {
+                page: 1,
+                limit: 10,
+            };
+            const requestHeaders = {
+                'Content-Type': 'application/json',
+                'x-access-token': localStorage.getItem("access_token"),
+            };
             try {
-                await axios
-                    .post(`${base_url}/product/toplist`, {
-                        // page: currentPage,
-                        page: 1,
-                        limit: 10,
-                    })
-                    .then((res) => {
-                        console.log(res.data.data.list, "????,list")
-                        if (res.data.success === true) {
-                            setData(res.data.data.list)
-                        }
-                    });
-            } catch (err) {
-                if (err.response) {
-                    // The client was given an error response (5xx, 4xx)
-                    console.log("Error", err.response);
-                } else if (err.request) {
-                    console.log("Error", err.request);
+                const response = await axios.post(`${base_url}/product/user/toplist`, requestBody, { headers: requestHeaders });
+                console.log(response.data.data.list, "List");
+                if (response.data.success === true) {
+                    setData(response.data.data.list);
+                }
+            } catch (error) {
+                if (error.response) {
+                    console.log("Error response:", error.response);
+                } else if (error.request) {
+                    console.log("No response received:", error.request);
                     message.error("Network Error");
-                    // The client never received a response, and the request was never left
                 } else {
-                    // Anything else
-                    console.log("Error", err.message);
+                    console.log("Error:", error.message);
                 }
             }
         }
-        ProductList();
+        getProductList();
     }, []);
+
+
+    // useEffect(() => {
+    //     async function ProductList() {
+    //         const requestBody = {
+    //             page: 1,
+    //             limit: 10,
+    //         };
+
+    //         const requestHeaders = {
+    //             'Content-Type': 'application/json',
+    //             'x-access-token': localStorage.getItem("access_token"),
+    //         };
+
+    //         try {
+    //             await axios
+    //                 .post(`${base_url}/product/user/toplist`, requestBody, { headers: requestHeaders })
+    //                 .then((res) => {
+    //                     console.log(res,"????,res")
+    //                     console.log(res.data.data.list, "????,list")
+    //                     if (res.data.success === true) {
+    //                         setData(res.data.data.list)
+    //                     }
+    //                 });
+    //         } catch (err) {
+    //             if (err.response) {
+    //                 // The client was given an error response (5xx, 4xx)
+    //                 console.log("Error", err.response);
+    //             } else if (err.request) {
+    //                 console.log("Error", err.request);
+    //                 message.error("Network Error");
+    //                 // The client never received a response, and the request was never left
+    //             } else {
+    //                 // Anything else
+    //                 console.log("Error", err.message);
+    //             }
+    //         }
+    //     }
+    //     ProductList();
+    // }, []);
+
 
     const responsive = {
         superLargeDesktop: {

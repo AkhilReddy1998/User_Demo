@@ -9,9 +9,9 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-      const values = await form.validateFields(); 
+      const values = await form.validateFields();
       const { email, password } = values;
-      
+
       const response = await fetch('http://localhost:7796/user/login', {
         method: 'POST',
         headers: {
@@ -19,10 +19,12 @@ function Login() {
         },
         body: JSON.stringify({ email, password }),
       });
-  
+
+
       if (response.ok) {
         const responseData = await response.json();
         const token = responseData.data.token;
+        console.log(responseData, "response of data")
         localStorage.setItem("access_token", token);
         console.log("access_token", token);
         message.success(responseData.message);
@@ -34,7 +36,7 @@ function Login() {
       console.error('Form validation failed:', error);
     }
   };
-  
+
 
   return (
     <div>

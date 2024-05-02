@@ -20,6 +20,8 @@ import ProductImage1 from "../../../Assets/Images/Products/1.png";
 import Header from "../../Shared/Header";
 import useNavigation from "../../../PageRouting/HandleNavigator";
 import { useLocation } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const categories = [
   "Men",
@@ -247,11 +249,18 @@ function Product() {
   const toggleWishlist = () => {
     setIsInWishlist(!isInWishlist);
   };
-  const { navigateTo } = useNavigation();
+
+  // const { navigateTo } = useNavigation();
 
   const location = useLocation();
   const item = location.state.item;
+  console.log(item,"????,item")
   
+  const history = useHistory();
+
+  const navigateTo = (route, data) => {
+    history.push(route, data);
+  };
   return (
     <div>
       <Header />
@@ -320,57 +329,57 @@ function Product() {
               </div>
             </div>
             <div className="grid grid-cols-3 gap-5 mt-5">
-              <div
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                className="bg-White rounded-md border-[0.5px] border-borderColor cursor-pointer"
-                onClick={() => navigateTo("/product-details")}
-              >
-                <div className="relative flex justify-center border-b-borderColor border-b p-3">
-                  <img src={ProductImage1} alt="images" className="w-[180px]" />
-                  <div className="absolute right-5 cursor-pointer">
-                    {isInWishlist ? (
-                      <HeartFilled
-                        onClick={toggleWishlist}
-                        className="text-secondaryColor"
-                        style={{ fontSize: "24px", cursor: "pointer" }}
-                      />
-                    ) : (
-                      <HeartOutlined
-                        onClick={toggleWishlist}
-                        className="text-secondaryText"
-                        style={{ fontSize: "24px", cursor: "pointer" }}
-                      />
+                <div
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                  className="bg-White rounded-md border-[0.5px] border-borderColor cursor-pointer"
+                  onClick={() => navigateTo("/product-details", { item })}
+                >
+                  <div className="relative flex justify-center border-b-borderColor border-b p-3">
+                    <img src={ProductImage1} alt="images" className="w-[180px]" />
+                    <div className="absolute right-5 cursor-pointer">
+                      {isInWishlist ? (
+                        <HeartFilled
+                          onClick={toggleWishlist}
+                          className="text-secondaryColor"
+                          style={{ fontSize: "24px", cursor: "pointer" }}
+                        />
+                      ) : (
+                        <HeartOutlined
+                          onClick={toggleWishlist}
+                          className="text-secondaryText"
+                          style={{ fontSize: "24px", cursor: "pointer" }}
+                        />
+                      )}
+                    </div>
+                  </div>
+                  <div className="p-5">
+                    <div className={isHovered ? "hidden" : "block"}>
+                      <div className="font-medium">
+                        {item.name}
+                      </div>
+                      <div className="flex gap-2 items-center mt-2">
+                        <Rate className="commonRate" allowHalf defaultValue={item.rating} />
+                        <span className="text-xs text-secondaryText font-medium">
+                          {item.price}
+                        </span>
+                      </div>
+                    </div>
+                    {isHovered && (
+                      <button className="bg-primaryText h-10 w-full text-White rounded-md mb-">
+                        Add to Card
+                      </button>
                     )}
-                  </div>
-                </div>
-                <div className="p-5">
-                  <div className={isHovered ? "hidden" : "block"}>
-                    <div className="font-medium">
-                     {item.name}
-                    </div>
-                    <div className="flex gap-2 items-center mt-2">
-                      <Rate className="commonRate" allowHalf defaultValue={item.rating} />
-                      <span className="text-xs text-secondaryText font-medium">
-                        {item.price}
-                      </span>
+                    <div className="flex gap-3 items-center mt-2">
+                      <h6 className="font-medium text-lg mb-0">{item.discountedPrice}</h6>
+                      <p className="text-secondaryText text-xs  mb-0">
+                        <span className="line-through text-base">{item.originalPrice}</span>{" "}
+                        (Save {item.savings})
+                      </p>
+                      <p className="mb-0 text-sm font-medium text-Green">{item.discount}</p>
                     </div>
                   </div>
-                  {isHovered && (
-                    <button className="bg-primaryText h-10 w-full text-White rounded-md mb-">
-                      Add to Card
-                    </button>
-                  )}
-                  <div className="flex gap-3 items-center mt-2">
-                    <h6 className="font-medium text-lg mb-0">{item.discountedPrice}</h6>
-                    <p className="text-secondaryText text-xs  mb-0">
-                      <span className="line-through text-base">{item.originalPrice}</span>{" "}
-                      (Save {item.savings})
-                    </p>
-                    <p className="mb-0 text-sm font-medium text-Green">{item.discount}</p>
-                  </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
